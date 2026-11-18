@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100d0c">
+  <title>Anas & Rabiya | Walima Invitation</title>
+  <meta name="description" content="You are warmly invited to celebrate the Walima of Anas and Rabiya on 17 January 2027.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div class="grain"></div>
+  <main>
+    <section class="intro" id="intro" aria-label="Open invitation">
+      <div class="intro-stars" aria-hidden="true"></div>
+      <p class="eyebrow">A CELEBRATION OF LOVE</p>
+      <div class="seal"><span>A <i>&</i> R</span></div>
+      <h1>You're Invited</h1>
+      <p class="intro-sub">to celebrate the Walima of</p>
+      <button class="open-button" id="openInvite">
+        <span>OPEN INVITATION</span><b>✦</b>
+      </button>
+      <p class="tap-note">A little moment, made with love</p>
+    </section>
+
+    <section class="invitation hidden" id="invitation">
+      <header class="topline"><span>WITH JOY & GRATITUDE</span><span class="ornament">✦</span><span>YOU ARE INVITED</span></header>
+      <div class="hero">
+        <p class="eyebrow reveal">TO CELEBRATE THE WALIMA OF</p>
+        <h1 class="couple reveal"><span>Anas</span><em>&</em><span>Rabiya</span></h1>
+        <div class="gold-rule reveal"><i>✧</i></div>
+        <p class="invitation-copy reveal">Together with their families, they request the pleasure of your company<br class="desktop"> as they celebrate this beautiful new beginning.</p>
+        <div class="date-block reveal">
+          <span class="date-label">SUNDAY</span>
+          <strong>17</strong>
+          <span class="date-month">JANUARY <b>2027</b></span>
+        </div>
+        <p class="time reveal">AT <strong>8:00 PM</strong></p>
+      </div>
+
+      <section class="details reveal">
+        <div class="detail-icon">✧</div>
+        <p class="eyebrow">THE EVENING</p>
+        <h2>An Elegant Celebration</h2>
+        <div class="detail-line"></div>
+        <h3>The Liberty Ballroom</h3>
+        <p>C-551, Main Allama Iqbal Road,<br>near Liberty Signal, Block 2 P.E.C.H.S.,<br>Karachi, Pakistan</p>
+        <a class="outline-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=The+Liberty+Ballroom%2C+C-551%2C+Main+Allama+Iqbal+Road%2C+Karachi">GET DIRECTIONS <span>↗</span></a>
+      </section>
+
+      <section class="countdown-section reveal">
+        <p class="eyebrow">COUNTING DOWN TO OUR DAY</p>
+        <div class="countdown" id="countdown">
+          <div><strong id="days">--</strong><span>DAYS</span></div>
+          <i>:</i><div><strong id="hours">--</strong><span>HOURS</span></div>
+          <i>:</i><div><strong id="minutes">--</strong><span>MINUTES</span></div>
+          <i>:</i><div><strong id="seconds">--</strong><span>SECONDS</span></div>
+        </div>
+      </section>
+
+      <footer class="footer reveal">
+        <div class="footer-flourish">✦　❧　✦</div>
+        <p>YOUR PRESENCE WILL MAKE OUR DAY EVEN MORE SPECIAL</p>
+        <h2>With love, Anas & Rabiya</h2>
+        <button class="share-button" id="shareButton">SHARE INVITATION <span>↗</span></button>
+        <p class="footer-small">WE LOOK FORWARD TO CELEBRATING WITH YOU</p>
+      </footer>
+    </section>
+  </main>
+
+  <button class="music-toggle" id="musicToggle" aria-label="Play background music" title="Background music">
+    <span class="music-icon">♫</span><span id="musicLabel">MUSIC OFF</span>
+  </button>
+  <audio id="backgroundMusic" src="assets/music.mp3" loop preload="none"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
