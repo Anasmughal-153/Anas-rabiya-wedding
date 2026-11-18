@@ -1,11 +1,11 @@
-# Anas & Rabiya — Walima Invitation
+# Anas & Rabiya — Valima Invitation
 
-A responsive, cinematic digital Walima invitation website.
+A responsive, cinematic digital Valima invitation website.
 
 ## Included
 - Animated opening screen
 - Anas & Rabiya invitation page
-- Walima details: 17 January 2027, 8:00 PM
+- Valima details: 17 January 2027, 8:00 PM
 - The Liberty Ballroom, Karachi
 - Live countdown
 - Google Maps directions
