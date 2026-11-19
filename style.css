@@ -81,20 +81,15 @@ main{position:relative;z-index:1}
 .intro-stars{pointer-events:none;z-index:0}
 .open-button{position:relative;z-index:20;pointer-events:auto;cursor:pointer}
 .intro > *:not(.intro-stars){position:relative;z-index:1}
-
 /* ==========================================
    ELEGANT GARDEN — PREMIUM FLORAL EDITION
    Original chocolate, gold & ivory preserved
 ========================================== */
-
 /* OPENING SCREEN — FULL BOTANICAL FRAME */
-
 .intro-stars {
   overflow: hidden;
   pointer-events: none;
-  z-index: 0;
-}
-
+  z-index: 0;}
 .intro-stars::before,
 .intro-stars::after {
   content: "";
@@ -106,13 +101,9 @@ main{position:relative;z-index:1}
   pointer-events: none;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  filter: drop-shadow(0 5px 12px #00000035);
-}
-
+  filter: drop-shadow(0 5px 12px #00000035);}
 /* Left floral arrangement */
-.intro-stars::before {
-  left: -13px;
-  background-image:
+.intro-stars::before {left: -13px;background-image:
     radial-gradient(ellipse 13px 23px at 30% 13%, #d5b477 0 18%, #f2e8d7 20% 49%, transparent 52%),
     radial-gradient(ellipse 12px 22px at 44% 11%, #f0d9a6 0 35%, #e6d6bc 38% 55%, transparent 58%),
     radial-gradient(ellipse 13px 22px at 37% 9%, #d5b477 0 30%, #f2e8d7 33% 53%, transparent 57%),
@@ -130,11 +121,8 @@ main{position:relative;z-index:1}
     radial-gradient(ellipse 10px 27px at 25% 78%, #879078 0 40%, transparent 44%),
     radial-gradient(ellipse 9px 23px at 55% 82%, #879078 0 40%, transparent 44%),
     linear-gradient(115deg, transparent 43%, #b99a65 44% 44.5%, transparent 45%),
-    linear-gradient(145deg, transparent 49%, #b99a65 49.5% 50%, transparent 50.5%);
-}
-
-/* Right floral arrangement */
-.intro-stars::after {
+    linear-gradient(145deg, transparent 49%, #b99a65 49.5% 50%, transparent 50.5%);}
+/* Right floral arrangement */.intro-stars::after {
   right: -13px;
   transform: scaleX(-1);
   background-image:
@@ -155,62 +143,16 @@ main{position:relative;z-index:1}
     radial-gradient(ellipse 10px 27px at 25% 78%, #879078 0 40%, transparent 44%),
     radial-gradient(ellipse 9px 23px at 55% 82%, #879078 0 40%, transparent 44%),
     linear-gradient(115deg, transparent 43%, #b99a65 44% 44.5%, transparent 45%),
-    linear-gradient(145deg, transparent 49%, #b99a65 49.5% 50%, transparent 50.5%);
-}
-
+    linear-gradient(145deg, transparent 49%, #b99a65 49.5% 50%, transparent 50.5%);}
 /* OPENING — LUXURY SEAL */
-
-.seal {
-  background:
-    radial-gradient(circle, #30221c 50%, #d5b47712 100%);
-  box-shadow:
-    0 0 0 5px #d5b47712,
-    0 0 0 9px #d5b47725,
-    0 0 35px #d5b47725;
-}
-
+.seal {background:radial-gradient(circle, #30221c 50%, #d5b47712 100%);box-shadow:0 0 0 5px #d5b47712,0 0 0 9px #d5b47725,0 0 35px #d5b47725;}
 /* INNER INVITATION — REFINED GARDEN FRAME */
-
-.invitation {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-}
-
+.invitation {position: relative;isolation: isolate;overflow: hidden;}
 .invitation::before,
+.invitation::after {content: "";position: absolute;top: 0;width: clamp(95px, 20vw, 175px);height: 100%;min-height: 900px;opacity: .48;pointer-events: none;z-index: 0;background-repeat: repeat-y;background-size: 100% 560px;background-image:radial-gradient(ellipse 12px 20px at 28% 8%, #f2e8d7 0 45%, transparent 49%),radial-gradient(ellipse 12px 20px at 42% 10%, #d5b477 0 35%, #f0d9a6 38% 55%, transparent 58%),radial-gradient(ellipse 12px 20px at 33% 12%, #f2e8d7 0 45%, transparent 49%),radial-gradient(ellipse 12px 19px at 60% 22%, #f0d9a6 0 42%, #f2e8d7 45% 57%, transparent 60%),radial-gradient(ellipse 12px 22px at 35% 39%, #f2e8d7 0 44%, transparent 48%),radial-gradient(ellipse 12px 20px at 53% 42%, #d5b477 0 30%, #f0d9a6 33% 54%, transparent 58%),radial-gradient(ellipse 10px 24px at 20% 30%, #879078 0 40%, transparent 44%),radial-gradient(ellipse 10px 24px at 67% 33%, #879078 0 40%, transparent 44%),radial-gradient(ellipse 10px 24px at 28% 58%, #879078 0 40%, transparent 44%),radial-gradient(ellipse 10px 24px at 60% 65%, #879078 0 40%, transparent 44%),linear-gradient(125deg, transparent 45%, #b99a65 45.5% 46%, transparent 46.5%);}
+.invitation::before {left: 0;}
 .invitation::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: clamp(95px, 20vw, 175px);
-  height: 100%;
-  min-height: 900px;
-  opacity: .48;
-  pointer-events: none;
-  z-index: 0;
-  background-repeat: repeat-y;
-  background-size: 100% 560px;
-  background-image:
-    radial-gradient(ellipse 12px 20px at 28% 8%, #f2e8d7 0 45%, transparent 49%),
-    radial-gradient(ellipse 12px 20px at 42% 10%, #d5b477 0 35%, #f0d9a6 38% 55%, transparent 58%),
-    radial-gradient(ellipse 12px 20px at 33% 12%, #f2e8d7 0 45%, transparent 49%),
-    radial-gradient(ellipse 12px 19px at 60% 22%, #f0d9a6 0 42%, #f2e8d7 45% 57%, transparent 60%),
-    radial-gradient(ellipse 12px 22px at 35% 39%, #f2e8d7 0 44%, transparent 48%),
-    radial-gradient(ellipse 12px 20px at 53% 42%, #d5b477 0 30%, #f0d9a6 33% 54%, transparent 58%),
-    radial-gradient(ellipse 10px 24px at 20% 30%, #879078 0 40%, transparent 44%),
-    radial-gradient(ellipse 10px 24px at 67% 33%, #879078 0 40%, transparent 44%),
-    radial-gradient(ellipse 10px 24px at 28% 58%, #879078 0 40%, transparent 44%),
-    radial-gradient(ellipse 10px 24px at 60% 65%, #879078 0 40%, transparent 44%),
-    linear-gradient(125deg, transparent 45%, #b99a65 45.5% 46%, transparent 46.5%);
-}
-.invitation::before {
-  left: 0;}
-
-.invitation::after {
-  right: 0;
-  transform: scaleX(-1);
-}
-
+  right: 0;  transform: scaleX(-1);}
 .invitation > * {position: relative;z-index: 1;}
 /* KEEP MOBILE FLORALS INSIDE THE SCREEN */
 @media(max-width:600px) {.intro-stars::before,.intro-stars::after {width: 32vw;opacity: .85;}
