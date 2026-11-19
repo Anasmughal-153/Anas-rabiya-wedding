@@ -17,5 +17,9 @@ main{position:relative;z-index:1}.intro{min-height:100svh;display:flex;flex-dire
 .intro-stars {pointer-events: none;z-index: 0;}
 .open-button {position: relative;z-index: 20;pointer-events:auto;cursor:pointer;}
 .intro > *:not(.intro-stars){position:relative;z-index: 1;}
-.date-block strong {position:relative;top:-8px;}
+.date-block strong {
+  position: relative;
+  top: -23px !important;
+}
+
 
