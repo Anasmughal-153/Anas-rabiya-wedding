@@ -99,3 +99,60 @@ main{position:relative;z-index:1}
 .intro-stars{pointer-events:none;z-index:0}
 .open-button{position:relative;z-index:20;pointer-events:auto;cursor:pointer}
 .intro > *:not(.intro-stars){position:relative;z-index:1}
+
+/* FLORAL THEME - OPENING SCREEN */
+.intro-stars::before,
+.intro-stars::after {
+  content: "❦";
+  position: absolute;
+  color: var(--gold-light);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(85px, 20vw, 145px);
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+.intro-stars::before {
+  top: 8%;
+  left: 5%;
+  transform: rotate(-35deg);
+}
+
+.intro-stars::after {
+  bottom: 8%;
+  right: 5%;
+  transform: rotate(145deg);
+}
+
+/* FLORAL THEME - OPEN INVITATION */
+.invitation {
+  position: relative;
+}
+
+.invitation::before,
+.invitation::after {
+  content: "❧";
+  position: absolute;
+  color: var(--gold);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(75px, 16vw, 120px);
+  opacity: 0.22;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.invitation::before {
+  top: 45px;
+  left: 0;
+  transform: rotate(-35deg);
+}
+
+.invitation::after {
+  bottom: 35px;
+  right: 0;
+  transform: rotate(145deg);
+}
+
+.invitation > * {
+  position: relative;
+  z-index: 1; }
