@@ -69,9 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
           await audio.play();
           if (musicLabel) musicLabel.textContent = 'MUSIC ON';
-        } catch (error) {
-          if (musicLabel) musicLabel.textContent = 'ADD MUSIC FILE';
-        }
+        } catch(e){alert('Music Error: '+e.name+' - '+e.message);musicLabel.textContent='MUSIC ERROR';}
       } else {
         audio.pause();
         if (musicLabel) musicLabel.textContent = 'MUSIC OFF';
