@@ -85,80 +85,54 @@ main{position:relative;z-index:1}
    ELEGANT GARDEN — PREMIUM FLORAL EDITION
    Original chocolate, gold & ivory preserved
 ========================================== */
-/* OPENING SCREEN — FULL BOTANICAL FRAME */
-.intro-stars {
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 0;}
+/* PREMIUM GOLDEN SPARKLE EFFECT */
+.intro-stars{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  overflow:hidden;
+  background:
+    radial-gradient(2px 2px at 12% 18%, #f0d9a6 45%, transparent 100%),
+    radial-gradient(3px 3px at 83% 16%, #d5b477 40%, transparent 100%),
+    radial-gradient(2px 2px at 72% 37%, #f0d9a6 45%, transparent 100%),
+    radial-gradient(2px 2px at 22% 55%, #d5b477 45%, transparent 100%),
+    radial-gradient(3px 3px at 91% 68%, #f0d9a6 35%, transparent 100%),
+    radial-gradient(2px 2px at 9% 82%, #d5b477 45%, transparent 100%),
+    radial-gradient(2px 2px at 63% 88%, #f0d9a6 45%, transparent 100%),
+    radial-gradient(1px 1px at 45% 12%, #fff0ce 60%, transparent 100%);
+}
+
 .intro-stars::before,
-.intro-stars::after {
-  content: "";
-  position: absolute;
-  top: 1%;
-  width: clamp(145px, 36vw, 285px);
-  height: 98%;
-  opacity: .95;
-  pointer-events: none;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  filter: drop-shadow(0 5px 12px #00000035);}
-/* Left floral arrangement */
-.intro-stars::before {left: -13px;background-image:
-    radial-gradient(ellipse 13px 23px at 30% 13%, #d5b477 0 18%, #f2e8d7 20% 49%, transparent 52%),
-    radial-gradient(ellipse 12px 22px at 44% 11%, #f0d9a6 0 35%, #e6d6bc 38% 55%, transparent 58%),
-    radial-gradient(ellipse 13px 22px at 37% 9%, #d5b477 0 30%, #f2e8d7 33% 53%, transparent 57%),
-    radial-gradient(ellipse 10px 18px at 23% 28%, #f0d9a6 0 38%, #eee0c9 40% 58%, transparent 61%),
-    radial-gradient(ellipse 14px 22px at 48% 35%, #d5b477 0 20%, #f2e8d7 23% 50%, transparent 54%),
-    radial-gradient(ellipse 12px 19px at 32% 37%, #f0d9a6 0 38%, #e9d9c1 40% 58%, transparent 61%),
-    radial-gradient(ellipse 13px 22px at 57% 65%, #d5b477 0 25%, #f2e8d7 28% 52%, transparent 55%),
-    radial-gradient(ellipse 12px 19px at 40% 70%, #f0d9a6 0 36%, #e9d9c1 39% 58%, transparent 61%),
-    radial-gradient(ellipse 14px 23px at 25% 88%, #d5b477 0 22%, #f2e8d7 25% 51%, transparent 55%),
-    radial-gradient(ellipse 11px 18px at 45% 91%, #f0d9a6 0 38%, #e9d9c1 41% 58%, transparent 61%),
-    radial-gradient(ellipse 9px 23px at 20% 20%, #879078 0 40%, transparent 44%),
-    radial-gradient(ellipse 9px 25px at 56% 24%, #879078 0 40%, transparent 44%),
-    radial-gradient(ellipse 9px 25px at 15% 49%, #879078 0 40%, transparent 44%),
-    radial-gradient(ellipse 9px 23px at 64% 53%, #879078 0 40%, transparent 44%),
-    radial-gradient(ellipse 10px 27px at 25% 78%, #879078 0 40%, transparent 44%),
-    radial-gradient(ellipse 9px 23px at 55% 82%, #879078 0 40%, transparent 44%),
-    linear-gradient(115deg, transparent 43%, #b99a65 44% 44.5%, transparent 45%),
-    linear-gradient(145deg, transparent 49%, #b99a65 49.5% 50%, transparent 50.5%);}
-/* Right floral arrangement */.intro-stars::after {
-  right: -13px;
-  transform: scaleX(-1);
+.intro-stars::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(1.5px 1.5px at 30% 30%, #fff0ce 50%, transparent 100%),
+    radial-gradient(2px 2px at 58% 22%, #d5b477 50%, transparent 100%),
+    radial-gradient(1px 1px at 88% 48%, #fff0ce 50%, transparent 100%),
+    radial-gradient(2px 2px at 38% 76%, #d5b477 50%, transparent 100%),
+    radial-gradient(1px 1px at 76% 91%, #fff0ce 50%, transparent 100%);
+  animation: sparkle 4s ease-in-out infinite alternate;
+}
+
+.intro-stars::after{
+  transform:translateY(8px);
+  animation-delay:2s;
+  opacity:.45;
+}
+
+@keyframes sparkle{
+  from{opacity:.2;transform:scale(.98)}
+  to{opacity:1;transform:scale(1.02)}
+}
+
+/* SUBTLE SPARKLES ON INNER INVITATION */
+.invitation{
   background-image:
-    radial-gradient(ellipse 13px 23px at 30% 13%, #d5b477 0 18%, #f2e8d7 20% 49%, transparent 52%),
-    radial-gradient(ellipse 12px 22px at 44% 11%, #f0d9a6 0 35%, #e6d6bc 38% 55%, transparent 58%),
-    radial-gradient(ellipse 13px 22px at 37% 9%, #d5b477 0 30%, #f2e8d7 33% 53%, transparent 57%),
-    radial-gradient(ellipse 10px 18px at 23% 28%, #f0d9a6 0 38%, #eee0c9 40% 58%, transparent 61%),
-    radial-gradient(ellipse 14px 22px at 48% 35%, #d5b477 0 20%, #f2e8d7 23% 50%, transparent 54%),
-    radial-gradient(ellipse 12px 19px at 32% 37%, #f0d9a6 0 38%, #e9d9c1 40% 58%, transparent 61%),
-    radial-gradient(ellipse 13px 22px at 57% 65%, #d5b477 0 25%, #f2e8d7 28% 52%, transparent 55%),
-    radial-gradient(ellipse 12px 19px at 40% 70%, #f0d9a6 0 36%, #e9d9c1 39% 58%, transparent 61%),
-    radial-gradient(ellipse 14px 23px at 25% 88%, #d5b477 0 22%, #f2e8d7 25% 51%, transparent 55%),
-    radial-gradient(ellipse 11px 18px at 45% 91%, #f0d9a6 0 38%, #e9d9c1 41% 58%, transparent 61%),
-    radial-gradient(ellipse 9px 23px at 20% 20%, #879078 0 40%, transparent 44%),
-    radial-gradient(ellipse 9px 25px at 56% 24%, #879078 0 40%, transparent 44%),
-    radial-gradient(ellipse 9px 25px at 15% 49%, #879078 0 40%, transparent 44%),
-    radial-gradient(ellipse 9px 23px at 64% 53%, #879078 0 40%, transparent 44%),
-    radial-gradient(ellipse 10px 27px at 25% 78%, #879078 0 40%, transparent 44%),
-    radial-gradient(ellipse 9px 23px at 55% 82%, #879078 0 40%, transparent 44%),
-    linear-gradient(115deg, transparent 43%, #b99a65 44% 44.5%, transparent 45%),
-    linear-gradient(145deg, transparent 49%, #b99a65 49.5% 50%, transparent 50.5%);}
-/* OPENING — LUXURY SEAL */
-.seal {background:radial-gradient(circle, #30221c 50%, #d5b47712 100%);box-shadow:0 0 0 5px #d5b47712,0 0 0 9px #d5b47725,0 0 35px #d5b47725;}
-/* INNER INVITATION — REFINED GARDEN FRAME */
-.invitation {position: relative;isolation: isolate;overflow: hidden;}
-.invitation::before,
-.invitation::after {content: "";position: absolute;top: 0;width: clamp(95px, 20vw, 175px);height: 100%;min-height: 900px;opacity: .48;pointer-events: none;z-index: 0;background-repeat: repeat-y;background-size: 100% 560px;background-image:radial-gradient(ellipse 12px 20px at 28% 8%, #f2e8d7 0 45%, transparent 49%),radial-gradient(ellipse 12px 20px at 42% 10%, #d5b477 0 35%, #f0d9a6 38% 55%, transparent 58%),radial-gradient(ellipse 12px 20px at 33% 12%, #f2e8d7 0 45%, transparent 49%),radial-gradient(ellipse 12px 19px at 60% 22%, #f0d9a6 0 42%, #f2e8d7 45% 57%, transparent 60%),radial-gradient(ellipse 12px 22px at 35% 39%, #f2e8d7 0 44%, transparent 48%),radial-gradient(ellipse 12px 20px at 53% 42%, #d5b477 0 30%, #f0d9a6 33% 54%, transparent 58%),radial-gradient(ellipse 10px 24px at 20% 30%, #879078 0 40%, transparent 44%),radial-gradient(ellipse 10px 24px at 67% 33%, #879078 0 40%, transparent 44%),radial-gradient(ellipse 10px 24px at 28% 58%, #879078 0 40%, transparent 44%),radial-gradient(ellipse 10px 24px at 60% 65%, #879078 0 40%, transparent 44%),linear-gradient(125deg, transparent 45%, #b99a65 45.5% 46%, transparent 46.5%);}
-.invitation::before {left: 0;}
-.invitation::after {
-  right: 0;  transform: scaleX(-1);}
-.invitation > * {position: relative;z-index: 1;}
-/* KEEP MOBILE FLORALS INSIDE THE SCREEN */
-@media(max-width:600px) {.intro-stars::before,.intro-stars::after {width: 32vw;opacity: .85;}
-.invitation::before,.invitation::after {width: 19vw;opacity: .30;}}
-/* KEEP ALL FLORAL DECORATIONS NON-INTERACTIVE */
-.intro-stars::before,
-.intro-stars::after,
-.invitation::before,
-.invitation::after {pointer-events: none;}
+    radial-gradient(2px 2px at 4% 12%, #d5b47745 45%, transparent 100%),
+    radial-gradient(2px 2px at 96% 24%, #f0d9a635 45%, transparent 100%),
+    radial-gradient(1px 1px at 7% 68%, #f0d9a645 45%, transparent 100%),
+    radial-gradient(2px 2px at 93% 82%, #d5b47735 45%, transparent 100%);}
