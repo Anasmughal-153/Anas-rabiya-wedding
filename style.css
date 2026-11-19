@@ -86,53 +86,10 @@ main{position:relative;z-index:1}
    Original chocolate, gold & ivory preserved
 ========================================== */
 /* PREMIUM GOLDEN SPARKLE EFFECT */
-.intro-stars{
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  z-index:0;
-  overflow:hidden;
-  background:
-    radial-gradient(2px 2px at 12% 18%, #f0d9a6 45%, transparent 100%),
-    radial-gradient(3px 3px at 83% 16%, #d5b477 40%, transparent 100%),
-    radial-gradient(2px 2px at 72% 37%, #f0d9a6 45%, transparent 100%),
-    radial-gradient(2px 2px at 22% 55%, #d5b477 45%, transparent 100%),
-    radial-gradient(3px 3px at 91% 68%, #f0d9a6 35%, transparent 100%),
-    radial-gradient(2px 2px at 9% 82%, #d5b477 45%, transparent 100%),
-    radial-gradient(2px 2px at 63% 88%, #f0d9a6 45%, transparent 100%),
-    radial-gradient(1px 1px at 45% 12%, #fff0ce 60%, transparent 100%);
-}
-
+.intro-stars{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;background:radial-gradient(2px 2px at 12% 18%, #f0d9a6 45%, transparent 100%),radial-gradient(3px 3px at 83% 16%, #d5b477 40%, transparent 100%),radial-gradient(2px 2px at 72% 37%, #f0d9a6 45%, transparent 100%),radial-gradient(2px 2px at 22% 55%, #d5b477 45%, transparent 100%),radial-gradient(3px 3px at 91% 68%, #f0d9a6 35%, transparent 100%),radial-gradient(2px 2px at 9% 82%, #d5b477 45%, transparent 100%),radial-gradient(2px 2px at 63% 88%, #f0d9a6 45%, transparent 100%),radial-gradient(1px 1px at 45% 12%, #fff0ce 60%, transparent 100%);}
 .intro-stars::before,
-.intro-stars::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  background:
-    radial-gradient(1.5px 1.5px at 30% 30%, #fff0ce 50%, transparent 100%),
-    radial-gradient(2px 2px at 58% 22%, #d5b477 50%, transparent 100%),
-    radial-gradient(1px 1px at 88% 48%, #fff0ce 50%, transparent 100%),
-    radial-gradient(2px 2px at 38% 76%, #d5b477 50%, transparent 100%),
-    radial-gradient(1px 1px at 76% 91%, #fff0ce 50%, transparent 100%);
-  animation: sparkle 4s ease-in-out infinite alternate;
-}
-
-.intro-stars::after{
-  transform:translateY(8px);
-  animation-delay:2s;
-  opacity:.45;
-}
-
-@keyframes sparkle{
-  from{opacity:.2;transform:scale(.98)}
-  to{opacity:1;transform:scale(1.02)}
-}
-
+.intro-stars::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(1.5px 1.5px at 30% 30%, #fff0ce 50%, transparent 100%),radial-gradient(2px 2px at 58% 22%, #d5b477 50%, transparent 100%),radial-gradient(1px 1px at 88% 48%, #fff0ce 50%, transparent 100%),radial-gradient(2px 2px at 38% 76%, #d5b477 50%, transparent 100%),radial-gradient(1px 1px at 76% 91%, #fff0ce 50%, transparent 100%);animation: sparkle 4s ease-in-out infinite alternate;}
+.intro-stars::after{transform:translateY(8px);animation-delay:2s;opacity:.45;}
+@keyframes sparkle{from{opacity:.2;transform:scale(.98)}to{opacity:1;transform:scale(1.02)}}
 /* SUBTLE SPARKLES ON INNER INVITATION */
-.invitation{
-  background-image:
-    radial-gradient(2px 2px at 4% 12%, #d5b47745 45%, transparent 100%),
-    radial-gradient(2px 2px at 96% 24%, #f0d9a635 45%, transparent 100%),
-    radial-gradient(1px 1px at 7% 68%, #f0d9a645 45%, transparent 100%),
-    radial-gradient(2px 2px at 93% 82%, #d5b47735 45%, transparent 100%);}
+.invitation{background-image:radial-gradient(2px 2px at 4% 12%, #d5b47745 45%, transparent 100%),radial-gradient(2px 2px at 96% 24%, #f0d9a635 45%, transparent 100%),radial-gradient(1px 1px at 7% 68%, #f0d9a645 45%, transparent 100%),radial-gradient(2px 2px at 93% 82%, #d5b47735 45%, transparent 100%);}
