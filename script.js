@@ -1,45 +1,55 @@
-
 document.addEventListener('DOMContentLoaded', () => {
-
   const intro = document.getElementById('intro');
   const invitation = document.getElementById('invitation');
   const openButton = document.getElementById('openInvite');
+  const letterCard = document.getElementById('letterCard');
+  let invitationOpened = false;
 
-  // Open invitation
-  if (openButton) {
+  // Open the invitation while preserving the original reveal sequence.
+  if (openButton && intro && invitation) {
     openButton.addEventListener('click', () => {
+      if (invitationOpened) return;
+      invitationOpened = true;
+      intro.classList.add('intro-leaving');
       intro.style.transition = 'opacity 1s ease, transform 1s ease';
       intro.style.opacity = '0';
-      intro.style.transform = 'scale(1.04)';
-
-      setTimeout(() => {
+      intro.style.transform = 'scale(1.035)';
+      window.setTimeout(() => {
         intro.style.display = 'none';
         invitation.classList.remove('hidden');
-
-        document.querySelectorAll('.reveal').forEach((el, i) => {
-          setTimeout(() => el.classList.add('visible'), i * 250);
-        });
-
         window.scrollTo({ top: 0, behavior: 'smooth' });
-      }, 1000);
+        invitation.querySelectorAll('.reveal').forEach((el, i) => {
+          window.setTimeout(() => el.classList.add('visible'), i * 180);
+        });
+      }, 850);
     });
   }
 
-  // Animate sections on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
+  // Scroll reveals.
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+  }
+
+  // Interactive letter: tap to unfold / fold.
+  if (letterCard) {
+    letterCard.addEventListener('click', () => {
+      const isOpen = letterCard.classList.toggle('is-open');
+      letterCard.setAttribute('aria-expanded', String(isOpen));
     });
-  }, { threshold: 0.15 });
+  }
 
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  // Countdown
+  // Karachi local event time: 17 January 2027, 8:00 PM (UTC+05:00).
   const eventDate = new Date('2027-01-17T20:00:00+05:00').getTime();
-
   function updateCountdown() {
     const distance = Math.max(0, eventDate - Date.now());
     const values = {
@@ -48,38 +58,45 @@ document.addEventListener('DOMContentLoaded', () => {
       minutes: Math.floor((distance % 3600000) / 60000),
       seconds: Math.floor((distance % 60000) / 1000)
     };
-
     Object.entries(values).forEach(([id, value]) => {
       const element = document.getElementById(id);
       if (element) element.textContent = String(value).padStart(2, '0');
     });
   }
-
   updateCountdown();
-  setInterval(updateCountdown, 1000);
+  window.setInterval(updateCountdown, 1000);
 
-  // Background music
+  // Background music: mobile browsers require a direct user tap.
   const audio = document.getElementById('backgroundMusic');
   const musicToggle = document.getElementById('musicToggle');
   const musicLabel = document.getElementById('musicLabel');
-
   if (audio && musicToggle) {
     musicToggle.addEventListener('click', async () => {
       if (audio.paused) {
         try {
           await audio.play();
+          musicToggle.classList.add('playing');
+          musicToggle.setAttribute('aria-label', 'Pause background music');
           if (musicLabel) musicLabel.textContent = 'MUSIC ON';
-        } catch(e){alert('Music Error: '+e.name+' - '+e.message);musicLabel.textContent='MUSIC ERROR';}
+        } catch (error) {
+          if (musicLabel) musicLabel.textContent = 'AUDIO UNAVAILABLE';
+          console.warn('Background music could not play:', error);
+        }
       } else {
         audio.pause();
+        musicToggle.classList.remove('playing');
+        musicToggle.setAttribute('aria-label', 'Play background music');
         if (musicLabel) musicLabel.textContent = 'MUSIC OFF';
       }
     });
+    audio.addEventListener('ended', () => {
+      musicToggle.classList.remove('playing');
+      if (musicLabel) musicLabel.textContent = 'MUSIC OFF';
+    });
   }
 
-  // Share invitation
+  // Share invitation.
   const shareButton = document.getElementById('shareButton');
-
   if (shareButton) {
     shareButton.addEventListener('click', async () => {
       const data = {
@@ -87,15 +104,19 @@ document.addEventListener('DOMContentLoaded', () => {
         text: 'You are invited to the Valima of Anas & Rabiya on 17 January 2027 at 8:00 PM, The Liberty Ballroom, Karachi.',
         url: location.href
       };
-
       if (navigator.share) {
+        try { await navigator.share(data); } catch (error) { /* user cancelled */ }
+      } else if (navigator.clipboard && navigator.clipboard.writeText) {
         try {
-          await navigator.share(data);
-        } catch (error) {}
+          await navigator.clipboard.writeText(location.href);
+          shareButton.querySelector('span').textContent = 'COPIED';
+          window.setTimeout(() => shareButton.querySelector('span').textContent = '↗', 1800);
+        } catch (error) {
+          window.prompt('Copy this invitation link:', location.href);
+        }
       } else {
-        prompt('Copy this invitation link:', location.href);
+        window.prompt('Copy this invitation link:', location.href);
       }
     });
   }
-
 });
