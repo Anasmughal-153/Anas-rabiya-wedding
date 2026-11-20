@@ -1,0 +1,15 @@
+ANAS & RABIYA — FINAL REPLACEMENT FILES
+
+Files to replace in the ROOT of your GitHub repository:
+- index.html
+- style.css
+- script.js
+
+IMPORTANT:
+1. Keep your existing root image named exactly: feather-envelope.png
+2. Keep the existing assets folder.
+3. Optional music: put your licensed MP3 at assets/music.mp3
+4. Upload/replace these three files in the repository root and commit to main.
+5. Do not delete the feather image or assets folder.
+
+This package uses the existing image filename shown in your public repository.
