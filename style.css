@@ -1,3 +1,4 @@
+
 *{box-sizing:border-box}
 :root{--brown:#211712;--brown-deep:#130e0b;--brown-soft:#38271f;--gold:#b58b50;--gold-light:#e5c995;--champagne:#f1e5d0;--ivory:#fbf6ed;--ink:#45352b;--muted:#8f7b67}
 html{scroll-behavior:smooth}
@@ -20,6 +21,9 @@ main{position:relative}
 .monogram i,.letter-monogram i{font-style:italic;color:#a27b45}
 .caption-line{width:44px;height:1px;background:#a98758}
 .caption-small{font-size:6px;letter-spacing:.22em;color:#70543a}
+.envelope-stage.image-missing:before{content:"";position:absolute;z-index:1;width:76%;height:57%;top:22%;left:12%;background:linear-gradient(145deg,#f8edda,#d8bd91 48%,#f5e8d2);border:1px solid #d9bd8b;box-shadow:0 28px 40px #0008;clip-path:polygon(0 0,100% 0,100% 100%,0 100%);border-radius:4px}
+.envelope-stage.image-missing:after{content:"";position:absolute;z-index:1;width:76%;height:57%;top:22%;left:12%;background:linear-gradient(145deg,transparent 49%,#b38d5c 50%,transparent 51%),linear-gradient(35deg,transparent 49%,#c3a174 50%,transparent 51%);border:1px solid #c4a273;pointer-events:none}
+.envelope-stage.image-missing .envelope-caption{top:50%;color:#684b31}
 .intro h1{position:relative;z-index:2;font:400 clamp(43px,9vw,70px)/.95 'Cormorant Garamond',serif;color:#f7ead5;margin:0}
 .intro-sub{position:relative;z-index:2;color:#d4c0a5;font:italic 19px 'Cormorant Garamond',serif;margin:8px 0 20px}
 .open-button,.share-button{position:relative;z-index:3;border:1px solid var(--gold-light);background:linear-gradient(110deg,#c19a5c18,#f3dfb51c);color:#f0d9ad;padding:15px 24px;letter-spacing:.2em;font-size:9px;cursor:pointer;transition:background .3s,transform .3s,box-shadow .3s}
@@ -58,7 +62,8 @@ main{position:relative}
 .letter-front{background:linear-gradient(145deg,#fffaf1,#e9d8bb);border:1px solid #b58b50;outline:1px solid #b58b503b;outline-offset:-9px}
 .letter-front:after{content:"";position:absolute;inset:16px;border:1px solid #b58b5045;pointer-events:none}
 .letter-corner{position:absolute;color:#b58b50;font-size:29px}
-.corner-one{top:22px;left:25px}.corner-two{bottom:22px;right:25px;transform:rotate(180deg)}
+.corner-one{top:22px;left:25px}
+.corner-two{bottom:22px;right:25px;transform:rotate(180deg)}
 .letter-monogram{font:500 55px 'Cormorant Garamond',serif;color:#5a4030}
 .letter-rule{width:65px;height:1px;background:#b58b50;margin:13px 0}
 .letter-front-title,.letter-front-tap,.letter-inside-tap{font-size:8px;letter-spacing:.2em;color:#94764f}
@@ -72,7 +77,7 @@ main{position:relative}
 .letter-card.is-open .letter-inside{transform:rotateY(0);opacity:1}
 .velvet-note{font:italic 15px 'Cormorant Garamond',serif;color:#a18b70;margin:18px 0 0}
 .save-date{background:linear-gradient(180deg,#f2e7d5,#fbf7ef)}
-.scratch-card{position:relative;width:min(86vw,370px);height:310px;margin:30px auto 0;overflow:hidden;border:1px solid #b58b50;box-shadow:0 17px 36px #65491d20;background:#f8f0e3;touch-action:pan-y}
+.scratch-card{position:relative;width:min(86vw,370px);height:310px;margin:30px auto 0;overflow:hidden;border:1px solid #b58b50;box-shadow:0 17px 36px #65491d20;background:#f8f0e3;touch-action:none;isolation:isolate}
 .scratch-under{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,#fffaf1,#e9d8bb);color:#5a4030}
 .scratch-kicker{font-size:7px;letter-spacing:.24em;color:#a17d4a}
 .scratch-day{font:400 105px/.95 'Cormorant Garamond',serif;color:#8e6a3e;margin:3px 0}
@@ -81,8 +86,8 @@ main{position:relative}
 .scratch-divider{width:70px;height:1px;background:#b58b50;margin:17px 0 12px}
 .scratch-weekday{font-size:8px;letter-spacing:.28em;color:#8d704c}
 .scratch-time{font:italic 18px 'Cormorant Garamond',serif;color:#806344;margin-top:8px}
-#scratchCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:2;touch-action:none;cursor:crosshair}
-.scratch-instruction{position:absolute;z-index:3;pointer-events:none;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;color:#6d5235;font-size:9px;letter-spacing:.2em;text-shadow:0 1px 3px #fff9}
+#scratchCanvas{position:absolute;inset:0;display:block;width:100%;height:100%;z-index:2;touch-action:none;cursor:crosshair}
+.scratch-instruction{position:absolute;z-index:3;pointer-events:none;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;color:#6d5235;font-size:9px;letter-spacing:.2em;text-shadow:0 1px 3px #fff9;transition:opacity .3s}
 .reset-scratch{margin-top:18px;border:0;border-bottom:1px solid #b58b50;background:transparent;color:#8c704b;padding:8px 4px;font-size:8px;letter-spacing:.2em;cursor:pointer}
 .details{background:linear-gradient(180deg,#fbf7ef,#f0e2cd)}
 .details h3{font:500 29px 'Cormorant Garamond',serif;color:#5b4230;margin:24px 0 10px}
@@ -105,7 +110,8 @@ main{position:relative}
 .share-button span{margin-left:14px}
 .footer-small{margin-top:28px}
 .music-toggle{position:fixed;right:15px;bottom:15px;z-index:30;display:flex;align-items:center;gap:8px;border:1px solid #b58b50;background:#211712eF;color:#f0d9ad;padding:10px 13px;font-size:8px;letter-spacing:.13em;cursor:pointer;box-shadow:0 5px 20px #0003}
-.music-symbol{font-size:16px}.music-toggle.playing .music-symbol{animation:musicPulse .8s ease-in-out infinite alternate}
+.music-symbol{font-size:16px}
+.music-toggle.playing .music-symbol{animation:musicPulse .8s ease-in-out infinite alternate}
 .reveal{opacity:0;transform:translateY(25px);transition:opacity .9s ease,transform .9s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 @keyframes floatEnvelope{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
