@@ -1,13 +1,7 @@
-ANAS & RABIYA — GIFT COVER UPDATE
+ANAS & RABIYA — GIFT COVER UPDATE v5
 
-Replace these three files in your GitHub repository: index.html, style.css, script.js.
-Keep your existing assets folder (including assets/music.mp3) and all invitation images.
+Replace index.html, style.css and script.js in the GitHub repository. Keep the existing assets folder.
 
-Changes in this update:
-- Replaced the bulky cross-shaped ribbon with a slimmer vertical satin band and a dimensional six-petal flower bow.
-- Kept the A & R monogram only and moved it lower on the gift cover.
-- Removed the small ANAS & RABIYA text beneath the monogram.
-- Removed the ANAS & RABIYA · 17 JANUARY 2027 line from the bottom of the opening screen.
-- Left the invitation content and its other sections unchanged.
+This corrected version removes BOTH crossing ribbon strips, removes the bow tails that made the knot look cross-shaped, and uses a centered six-petal dimensional satin flower bow. The cover shows only the A & R monogram, positioned lower; there is no small Anas & Rabiya line under it and no names/date line at the bottom of the cover.
 
-After replacing the files, commit the changes and refresh the website. If the old design remains visible, clear the browser cache or open the page in a private tab.
+The CSS and JS cache versions are bumped to v5. After committing, open the live page in a private tab or hard-refresh once. GitHub Pages must finish deploying before the change appears.
