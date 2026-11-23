@@ -163,3 +163,90 @@ button{cursor:pointer}
  .ribbon-horizontal{left:-6%;top:48%;width:112%;height:8%}
  .bow.bow-satin{width:82%;height:55%;top:51%}
 }
+
+/* Elegant parents invitation typography */
+.parents-section {
+  margin: 27px auto 22px;
+  width: min(100%, 440px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+}
+
+.invite-line {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 19px;
+  font-style: italic;
+  color: #e8c9b1;
+  letter-spacing: 0.04em;
+  margin-bottom: 19px;
+}
+
+.intro {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 11px;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: #d2b17c;
+  margin: 0 auto 22px;
+}
+
+.parents-section .parent-label {
+  font-family: "DM Sans", sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.24em;
+  color: #c6a36a;
+  margin-top: 8px;
+}
+
+.parents-section h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(22px, 5vw, 27px);
+  font-weight: 500;
+  color: #f4e5d2;
+  letter-spacing: 0.025em;
+  margin: 0;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.parents-section .parent-divider {
+  font-family: "Great Vibes", cursive;
+  font-size: 31px;
+  color: #d5b67e;
+  line-height: 1;
+  margin: 4px 0;
+}
+
+.celebration-title {
+  font-family: "DM Sans", sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: #e0c18b;
+  margin: 25px 0 0;
+}
+
+.scroll-hint {
+  font-family: "DM Sans", sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  color: #e6cfb2;
+  margin-top: 35px;
+}
+
+@media (max-width: 520px) {
+  .parents-section {
+    margin-top: 22px;
+    gap: 8px;
+  }
+  .parents-section h2 {
+    font-size: 23px;
+  }
+  .intro {
+    font-size: 9px;
+  }
+  .celebration-title {
+    margin-top: 20px;
+  }
+}
