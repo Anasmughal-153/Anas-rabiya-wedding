@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const openButton = document.getElementById("openInvite");
   const invitation = document.getElementById("invitation");
   const curtainHero = document.getElementById("curtainHero");
+  const scrollCue = document.getElementById("scrollCue");
   let opening = false;
   
   // Keep the invitation in the document and reveal it only after the box animation.
@@ -123,28 +124,60 @@ observeReveals();;}, 2200);});
   }
   updateCountdown();
   window.setInterval(updateCountdown, 1000);
+// Background music with autoplay attempt and browser fallback.
+const audio = document.getElementById("backgroundMusic");
+const musicToggle = document.getElementById("musicToggle");
+const musicLabel = document.getElementById("musicLabel");
 
-  // Music is optional; keep the supplied assets/music.mp3 file in the repository.
-  const audio = document.getElementById("backgroundMusic");
-  const musicToggle = document.getElementById("musicToggle");
-  const musicLabel = document.getElementById("musicLabel");
-  musicToggle?.addEventListener("click", async () => {
-    if (!audio) return;
-    if (audio.paused) {
-      try {
-        await audio.play();
-        musicLabel.textContent = "SOUND ON";
-        musicToggle.setAttribute("aria-label", "Pause background music");
-      } catch (error) {
-        musicLabel.textContent = "AUDIO UNAVAILABLE";
-      }
-    } else {
-      audio.pause();
-      musicLabel.textContent = "SOUND OFF";
-      musicToggle.setAttribute("aria-label", "Play background music");
-    }
-  });
+function updateMusicButton() {
+  if (!audio || !musicLabel || !musicToggle) return;
 
+  if (audio.paused) {
+    musicLabel.textContent = "SOUND OFF";
+    musicToggle.setAttribute("aria-label", "Play background music");
+  } else {
+    musicLabel.textContent = "SOUND ON";
+    musicToggle.setAttribute("aria-label", "Pause background music");
+  }
+}
+
+async function playMusic() {
+  if (!audio) return;
+
+  try {
+    await audio.play();
+    updateMusicButton();
+
+    document.removeEventListener("pointerdown", startMusicOnInteraction);
+    document.removeEventListener("keydown", startMusicOnInteraction);
+  } catch (error) {
+    updateMusicButton();
+  }
+}
+
+function startMusicOnInteraction(event) {
+  if (event.target.closest("#musicToggle")) return;
+  playMusic();
+}
+
+// Try autoplay as soon as the website loads.
+playMusic();
+
+// If the browser blocks autoplay, start music on the visitor's first interaction.
+document.addEventListener("pointerdown", startMusicOnInteraction);
+document.addEventListener("keydown", startMusicOnInteraction);
+
+// Sound ON/OFF button.
+musicToggle?.addEventListener("click", async () => {
+  if (!audio) return;
+
+  if (audio.paused) {
+    await playMusic();
+  } else {
+    audio.pause();
+    updateMusicButton();
+  }
+});
   const shareButton = document.getElementById("shareButton");
   shareButton?.addEventListener("click", async () => {
     const shareData = {
