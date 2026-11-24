@@ -398,5 +398,8 @@ button{cursor:pointer}
 
 /* Smooth reversible curtain animation */
 .curtain {
-  transition: transform 3s cubic-bezier(.65, 0, .25, 1);
-}
+  transition: transform 3s cubic-bezier(.65, 0, .25, 1);}
+.footer-section h2 i {
+  display: inline-block;
+  margin-left: 0.12em;
+  margin-right: 0.12em;}
