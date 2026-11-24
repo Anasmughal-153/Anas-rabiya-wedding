@@ -344,3 +344,56 @@ button{cursor:pointer}
     margin-top: 25px;
   }
 }
+/* FINAL MOBILE HERO TYPOGRAPHY */
+
+.invite-line {
+  font-size: 24px;
+}
+
+.intro {
+  font-size: 13px;
+}
+
+.parents-section .parent-label {
+  font-size: 10px;
+}
+
+.parents-section h2 {
+  font-size: clamp(26px, 6.5vw, 30px);
+}
+
+.parents-section .parent-divider {
+  font-size: 36px;
+}
+
+.celebration-title {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+}
+
+.scroll-hint {
+  font-size: 9px;
+  padding: 14px 22px;
+}
+
+@media (max-width: 520px) {
+  .invite-line {
+    font-size: 23px;
+  }
+
+  .intro {
+    font-size: 11px;
+  }
+
+  .parents-section h2 {
+    font-size: 26px;
+  }
+
+  .parents-section .parent-label {
+    font-size: 10px;
+  }
+
+  .celebration-title {
+    font-size: 10px;
+  }
+}
