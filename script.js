@@ -20,10 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
       window.scrollTo({ top: 0, behavior: "instant" });
 
       // The curtains part after the invitation section is visible; no blank/black frame.
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => curtainHero?.classList.add("curtains-open"));
-      });
-      observeReveals();}, 2200);});
+observeCurtain();
+observeReveals();;}, 2200);});
   scrollCue?.addEventListener("click", () => {
     document.querySelector(".letter-section")?.scrollIntoView({ behavior: "smooth" });});
   function observeCurtain() {
