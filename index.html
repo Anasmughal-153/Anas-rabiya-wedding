@@ -16,10 +16,14 @@
 
   <main>
     <section class="gift-screen" id="giftScreen" aria-label="Open your wedding invitation">
-      <div class="corner corner-tl"></div><div class="corner corner-tr"></div>
-      <div class="corner corner-bl"></div><div class="corner corner-br"></div>
+      <div class="corner corner-tl"></div>
+      <div class="corner corner-tr"></div>
+      <div class="corner corner-bl"></div>
+      <div class="corner corner-br"></div>
+
       <button class="sound-toggle" id="musicToggle" type="button" aria-label="Play background music">
-        <span class="sound-symbol">♫</span><span id="musicLabel">SOUND OFF</span>
+        <span class="sound-symbol">♫</span>
+        <span id="musicLabel">SOUND OFF</span>
       </button>
 
       <div class="opening-copy">
@@ -42,6 +46,7 @@
           <div class="box-right">
           </div>
           <div class="ribbon-horizontal" aria-hidden="true"></div>
+
           <svg class="bow bow-satin" viewBox="0 0 520 260" role="img" aria-label="Burgundy satin ribbon tied in a bow">
             <defs>
               <linearGradient id="satinFace" x1="0" y1="0" x2="1" y2="1">
@@ -71,62 +76,68 @@
               </filter>
             </defs>
             <g filter="url(#bowShadow)">
-              <!-- softly folded left loop -->
               <path d="M260 116 C225 77 174 35 117 48 C68 59 69 112 104 137 C145 166 207 143 260 116Z" fill="url(#satinFace)" stroke="#e87994" stroke-opacity=".52" stroke-width="3"/>
               <path d="M252 113 C213 91 164 65 124 69 C99 72 91 91 104 111 C133 145 190 132 252 113Z" fill="none" stroke="#f7a4b7" stroke-opacity=".55" stroke-width="5"/>
               <path d="M251 117 C205 123 158 142 111 126 C142 160 205 146 260 121Z" fill="#51091f" opacity=".35"/>
-              <!-- softly folded right loop -->
               <path d="M260 116 C295 77 346 35 403 48 C452 59 451 112 416 137 C375 166 313 143 260 116Z" fill="url(#satinFace)" stroke="#e87994" stroke-opacity=".52" stroke-width="3"/>
               <path d="M268 113 C307 91 356 65 396 69 C421 72 429 91 416 111 C387 145 330 132 268 113Z" fill="none" stroke="#f7a4b7" stroke-opacity=".55" stroke-width="5"/>
               <path d="M269 117 C315 123 362 142 409 126 C378 160 315 146 260 121Z" fill="#51091f" opacity=".35"/>
-              <!-- flowing cut-end tails -->
               <path d="M242 130 C216 147 184 173 150 222 L205 207 L232 242 C251 199 259 161 260 124Z" fill="url(#satinFold)" stroke="#e87994" stroke-opacity=".45" stroke-width="2"/>
               <path d="M246 139 C218 169 194 194 173 216" fill="none" stroke="#f7a4b7" stroke-opacity=".45" stroke-width="4"/>
               <path d="M278 130 C304 147 336 173 370 222 L315 207 L288 242 C269 199 261 161 260 124Z" fill="url(#satinFace)" stroke="#e87994" stroke-opacity=".45" stroke-width="2"/>
               <path d="M274 139 C302 169 326 194 347 216" fill="none" stroke="#f7a4b7" stroke-opacity=".45" stroke-width="4"/>
-              <!-- compact, softly gathered center knot -->
               <path d="M260 88 C281 89 296 104 296 124 C296 148 281 163 260 164 C239 163 224 148 224 124 C224 104 239 89 260 88Z" fill="url(#knotFace)" stroke="#f19bb0" stroke-opacity=".65" stroke-width="3"/>
               <path d="M242 101 C250 94 269 93 278 103" fill="none" stroke="#ffd0db" stroke-opacity=".42" stroke-width="4" stroke-linecap="round"/>
             </g>
           </svg>
         </div>
       </div>
+
       <button class="open-button" id="openInvite" type="button">
         <span>OPEN YOUR INVITATION</span><b>↗</b>
       </button>
-      <button type="button" id="scrollCue" class="scroll-hint">
-  <span>SCROLL DOWN</span>
-  <span class="scroll-arrow">↓</span>
-      </button>
+
       <p class="tap-note">A celebration of love awaits</p>
     </section>
 
     <section class="invitation" id="invitation" aria-hidden="true">
+
+      <button type="button" id="curtainScrollCue" class="scroll-hint">
+        <span>SCROLL DOWN</span>
+        <span class="scroll-arrow">↓</span>
+      </button>
+
       <section class="curtain-hero" id="curtainHero">
-        <div class="curtain curtain-left"></div><div class="curtain curtain-right"></div>
+        <div class="curtain curtain-left"></div>
+        <div class="curtain curtain-right"></div>
+
         <div class="hero-content">
+
           <div class="invite-line">
-  Together with their families
-</div>
+            Together with their families
+          </div>
 
-<p class="intro">
-  Request the pleasure of your company
-</p>
+          <p class="intro">
+            Request the pleasure of your company
+          </p>
 
-<div class="parents-section">
-  <div class="parent-label">THE SON OF</div>
-  <h2>Mr. Muhammad Siraj Uddin</h2>
+          <div class="parents-section">
+            <div class="parent-label">THE SON OF</div>
+            <h2>Mr. Muhammad Siraj Uddin</h2>
 
-  <div class="parent-divider">&amp;</div>
+            <div class="parent-divider">&amp;</div>
 
-  <div class="parent-label">THE DAUGHTER OF</div>
-  <h2>Mr. Muhammad Iqbal</h2>
-</div>
+            <div class="parent-label">THE DAUGHTER OF</div>
+            <h2>Mr. Muhammad Iqbal</h2>
+          </div>
 
-<div class="celebration-title">
-  ✦ THE VALIMA CELEBRATION ✦
-</div>
+          <div class="celebration-title">
+            ✦ THE VALIMA CELEBRATION ✦
+          </div>
+
+        </div>
       </section>
+
       <section class="letter-section section-pad reveal">
         <p class="script-heading">A Note From Us</p>
         <p class="eyebrow"></p>
@@ -167,8 +178,16 @@
         <p class="eyebrow">A BEAUTIFUL BEGINNING</p>
         <h2 class="section-title">An evening to remember</h2>
         <div class="timeline">
-          <div class="timeline-item"><span class="timeline-time">8:00 PM</span><span class="timeline-dot"></span><div><h3>Welcome</h3><p>We look forward to welcoming you</p></div></div>
-          <div class="timeline-item"><span class="timeline-time">THE EVENING</span><span class="timeline-dot"></span><div><h3>Valima Celebration</h3><p>An evening of togetherness, duas and joy</p></div></div>
+          <div class="timeline-item">
+            <span class="timeline-time">8:00 PM</span>
+            <span class="timeline-dot"></span>
+            <div><h3>Welcome</h3><p>We look forward to welcoming you</p></div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-time">THE EVENING</span>
+            <span class="timeline-dot"></span>
+            <div><h3>Valima Celebration</h3><p>An evening of togetherness, duas and joy</p></div>
+          </div>
         </div>
       </section>
 
