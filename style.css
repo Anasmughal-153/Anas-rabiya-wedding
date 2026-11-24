@@ -265,3 +265,82 @@ button{cursor:pointer}
   opacity: 1;
   transform: translateY(0);
 }
+/* FINAL HERO TEXT & SCROLL BUTTON FIX */
+
+.invite-line {
+  font-size: 22px;
+  margin-bottom: 22px;
+}
+
+.intro {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  margin-bottom: 25px;
+}
+
+.parents-section {
+  margin-top: 25px;
+  gap: 10px;
+}
+
+.parents-section .parent-label {
+  font-size: 9px;
+}
+
+.parents-section h2 {
+  font-size: clamp(24px, 6vw, 29px);
+}
+
+.parents-section .parent-divider {
+  font-size: 34px;
+}
+
+.celebration-title {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  margin-top: 25px;
+}
+
+/* Scroll button */
+.scroll-hint {
+  display: inline-block;
+  border: 1px solid #c6a36a;
+  background: transparent;
+  padding: 12px 20px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: #e6cfb2;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.scroll-hint:active {
+  background: #c6a36a;
+  color: #310713;
+}
+
+@media (max-width: 520px) {
+  .invite-line {
+    font-size: 21px;
+  }
+
+  .intro {
+    font-size: 10px;
+  }
+
+  .parents-section h2 {
+    font-size: 24px;
+  }
+
+  .celebration-title {
+    font-size: 9px;
+  }
+
+  .scroll-hint {
+    font-size: 8px;
+    padding: 12px 17px;
+    margin-top: 25px;
+  }
+}
