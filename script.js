@@ -5,12 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const invitation = document.getElementById("invitation");
   const curtainHero = document.getElementById("curtainHero");
   const scrollCue = document.getElementById("scrollCue");
-  if (scrollCue) {
+  if (scrollCue && openButton) {
   scrollCue.addEventListener("click", () => {
-    document.querySelector(".letter-section")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
+    openButton.click();
   });
   }
   let opening = false;
