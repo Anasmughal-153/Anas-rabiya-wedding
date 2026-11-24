@@ -250,3 +250,18 @@ button{cursor:pointer}
     margin-top: 20px;
   }
 }
+
+.reveal,
+.fade-in,
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal.is-visible,
+.fade-in.is-visible,
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
