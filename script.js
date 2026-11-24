@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const openButton = document.getElementById("openInvite");
   const invitation = document.getElementById("invitation");
   const curtainHero = document.getElementById("curtainHero");
-  const scrollCue = document.getElementById("scrollCue");scrollCue?.addEventListener("click", () => {document.querySelector(".letter-section")?.scrollIntoView({behavior: "smooth"});});
+  let opening = false;
+  
   // Keep the invitation in the document and reveal it only after the box animation.
   openButton?.addEventListener("click", () => {
     if (opening) return;
@@ -22,14 +23,21 @@ document.addEventListener("DOMContentLoaded", () => {
       requestAnimationFrame(() => {
         requestAnimationFrame(() => curtainHero?.classList.add("curtains-open"));
       });
-      observeReveals();
-    }, 2200);
-  });
-
+      observeReveals();}, 2200);});
   scrollCue?.addEventListener("click", () => {
-    document.querySelector(".letter-section")?.scrollIntoView({ behavior: "smooth" });
-  });
-
+    document.querySelector(".letter-section")?.scrollIntoView({ behavior: "smooth" });});
+  function observeCurtain() {
+  if (!curtainHero || !("IntersectionObserver" in window)) {
+    curtainHero?.classList.add("curtains-open");
+    return;}
+  const curtainObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.45) {
+        curtainHero.classList.add("curtains-open");} else {
+        curtainHero.classList.remove("curtains-open");}});}, {
+    threshold: [0, 0.45, 0.6]});
+  curtainObserver.observe(curtainHero);}
+  
   function observeReveals() {
     const sections = document.querySelectorAll("#invitation .reveal");
     if (!("IntersectionObserver" in window)) {
