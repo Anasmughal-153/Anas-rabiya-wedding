@@ -33,7 +33,7 @@ button{cursor:pointer}
 .invitation{display:none;background:#18050b;overflow:hidden}.invitation.is-visible{display:block;animation:pageIn 1s both}
 .curtain-hero{position:relative;min-height:100svh;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 50% 43%,#6d1831 0,#330817 54%,#16040b 100%);isolation:isolate}
 .curtain-hero:before{content:"";position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(90deg,#ffffff08 0 2px,transparent 3px 25px),radial-gradient(ellipse at 50% 100%,#c28b4b30,transparent 45%)}
-.curtain{position:absolute;z-index:3;top:0;bottom:0;width:54%;background:repeating-linear-gradient(90deg,#3b0616 0 12px,#650d27 18px,#8a1b39 26px,#4c081b 38px,#310511 49px);box-shadow:inset -20px 0 30px #16030a88,0 0 35px #08010688;transition:transform 2.2s cubic-bezier(.7,0,.2,1);pointer-events:none}
+.curtain{position:absolute;z-index:3;top:0;bottom:0;width:54%;background:repeating-linear-gradient(90deg,#3b0616 0 12px,#650d27 18px,#8a1b39 26px,#4c081b 38px,#310511 49px);box-shadow:inset -20px 0 30px #16030a88,0 0 35px #08010688;transition: transform 3.8s cubic-bezier(.65,0,.35,1);
 .curtain-left{left:0;clip-path:polygon(0 0,100% 0,91% 100%,0 100%);transform-origin:left}.curtain-right{right:0;clip-path:polygon(0 0,100% 0,100% 100%,9% 100%);transform-origin:right}
 .curtain-hero.curtains-open .curtain-left{transform:translateX(-92%)}.curtain-hero.curtains-open .curtain-right{transform:translateX(92%)}
 .hero-content{position:relative;z-index:2;text-align:center;width:min(92%,680px);padding:100px 20px 80px;opacity:0;transform:translateY(25px);transition:opacity 1.4s .65s,transform 1.4s .65s}
