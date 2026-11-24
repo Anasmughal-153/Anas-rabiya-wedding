@@ -394,6 +394,9 @@ button{cursor:pointer}
   }
 
   .celebration-title {
-    font-size: 10px;
-  }
+    font-size: 10px;}}
+
+/* Smooth reversible curtain animation */
+.curtain {
+  transition: transform 3s cubic-bezier(.65, 0, .25, 1);
 }
