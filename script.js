@@ -5,6 +5,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const invitation = document.getElementById("invitation");
   const curtainHero = document.getElementById("curtainHero");
   const scrollCue = document.getElementById("scrollCue");
+  if (scrollCue) {
+  scrollCue.addEventListener("click", () => {
+    document.querySelector(".letter-section")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  });
+  }
   let opening = false;
   
   // Keep the invitation in the document and reveal it only after the box animation.
