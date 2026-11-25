@@ -536,17 +536,19 @@ button{cursor:pointer}
   z-index: 5 !important;
 }
 #scrollCueHero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
   background: transparent !important;
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
   border-radius: 0 !important;
   padding: 10px 15px;
+}
+#scrollCueHero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 }
 
 #scrollCueHero .scroll-arrow {
