@@ -403,3 +403,72 @@ button{cursor:pointer}
   display: inline-block;
   margin-left: 0.12em;
   margin-right: 0.12em;}
+
+
+/* FINAL SCROLL CONTROL — shown inside the opened invitation cover only */
+.box-insert .scroll-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin: 10px 0 0;
+  padding: 8px 14px;
+  border: 1px solid #c6a36a;
+  border-radius: 2px;
+  background: rgba(255, 250, 240, 0.72);
+  color: #690d27;
+  font-family: "DM Sans", sans-serif;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  line-height: 1.3;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(5px);
+  transition: opacity 0.7s ease, transform 0.7s ease, background 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.gift-screen.is-unwrapped .box-insert .scroll-hint {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition-delay: 0.25s;
+}
+
+.box-insert .scroll-hint:active {
+  background: #ead6ad;
+}
+
+.box-insert .scroll-arrow {
+  display: block;
+  color: #690d27;
+  font-size: 20px;
+  line-height: 1;
+  animation: invitationScrollArrow 1.5s ease-in-out infinite;
+}
+
+@keyframes invitationScrollArrow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+/* The old hero-bottom scroll control is intentionally not used. */
+.curtain-hero > .scroll-hint {
+  display: none !important;
+}
+
+@media (max-width: 520px) {
+  .box-insert .scroll-hint {
+    margin-top: 8px;
+    padding: 7px 10px;
+    font-size: 7px;
+  }
+  .box-insert .scroll-arrow {
+    font-size: 18px;
+  }
+}
