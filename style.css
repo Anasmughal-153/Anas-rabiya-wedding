@@ -556,3 +556,28 @@ button{cursor:pointer}
   font-size: 20px;
   line-height: 1;
 }
+#scrollCueHero {
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 35px !important;
+  transform: translateX(-50%) !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: max-content !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 10px 15px !important;
+  gap: 8px !important;
+}
+
+#scrollCueHero .scroll-arrow {
+  display: block !important;
+  font-size: 22px !important;
+  line-height: 1 !important;
+}
