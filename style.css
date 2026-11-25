@@ -509,3 +509,35 @@ button{cursor:pointer}
   display: block;
   text-align: center;
 }
+/* Elegant PRESS & HOLD text inside wax seal */
+.wax-seal {
+  position: relative;
+}
+
+.seal-initials {
+  display: none !important;
+}
+
+.seal-instruction {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 78%;
+  text-align: center;
+  white-space: nowrap;
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.8px;
+  color: #f3dfbd;
+
+  text-shadow:
+    0 1px 2px rgba(65, 5, 22, 0.65),
+    0 0 5px rgba(255, 220, 180, 0.2);
+
+  z-index: 2;
+  pointer-events: none;
+}
