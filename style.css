@@ -968,3 +968,85 @@ button{cursor:pointer}
   position: relative !important;
   z-index: 2 !important;
 }
+
+/* CINEMATIC ROSE PETAL BLAST */
+.footer-section {
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+}
+
+.footer-section .footer-flower-layer {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+.footer-section .footer-flower-layer .rose-petal {
+  position: absolute !important;
+  left: 50% !important;
+  top: 8% !important;
+  display: block !important;
+
+  width: var(--size) !important;
+  height: calc(var(--size) * 1.5) !important;
+
+  border-radius: 85% 15% 75% 25% !important;
+
+  background: linear-gradient(
+    145deg,
+    #f9d9d3 0%,
+    #e9a6a0 35%,
+    #c65e70 70%,
+    #8c2948 100%
+  ) !important;
+
+  box-shadow: inset 2px 2px 5px #fff7, 2px 4px 8px #0004 !important;
+
+  opacity: 0 !important;
+  visibility: visible !important;
+
+  animation: roseBlastFall 9s linear var(--delay) infinite !important;
+}
+
+.footer-section.is-visible .footer-flower-layer .rose-petal {
+  opacity: 1 !important;
+  animation-play-state: running !important;
+}
+
+@keyframes roseBlastFall {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(0deg) scale(.15);
+  }
+
+  5% {
+    opacity: .95;
+    transform: translate(0, 0) rotate(30deg) scale(1);
+  }
+
+  18% {
+    opacity: 1;
+    transform: translate(var(--burst-x), var(--burst-y))
+      rotate(180deg) scale(1.1);
+  }
+
+  100% {
+    opacity: .8;
+    transform: translate(
+      calc(var(--burst-x) + var(--drift)),
+      850px
+    ) rotate(var(--spin)) scale(.8);
+  }
+}
+
+.footer-section > :not(.footer-flower-layer) {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.footer-section .footer-ornament {
+  animation: none !important;
+}
