@@ -790,13 +790,10 @@ button{cursor:pointer}
   font: italic 25px "Cormorant Garamond", serif !important;
   color: #806b63 !important;
 }
-/* GOLDEN FALLING STARS */
+/* SOFT GOLDEN SNOWFALL */
 .venue-image {
+  position: relative;
   overflow: hidden;
-}
-
-.venue-image:after {
-  content: none !important;
 }
 
 .venue-stars {
@@ -804,39 +801,57 @@ button{cursor:pointer}
   inset: 0;
   overflow: hidden;
   pointer-events: none;
-  z-index: 2;
+  z-index: 1;
 }
 
-.venue-stars span {
+.venue-stars i {
   position: absolute;
-  top: -30px;
-  color: #ead6ad;
+  top: -12px;
+  left: var(--x);
+  width: var(--s);
+  height: var(--s);
+  border-radius: 50%;
+  background: #ead6ad;
   opacity: 0;
-  font-size: 17px;
-  animation: fallingStars 7s linear infinite;
+  box-shadow: 0 0 7px #ead6ad;
+  animation: goldenSnow var(--d) linear var(--delay) infinite;
 }
 
-.venue-stars span:nth-child(1) {left: 10%; animation-delay: 0s;}
-.venue-stars span:nth-child(2) {left: 25%; animation-delay: 2s;}
-.venue-stars span:nth-child(3) {left: 40%; animation-delay: 4s;}
-.venue-stars span:nth-child(4) {left: 55%; animation-delay: 1s;}
-.venue-stars span:nth-child(5) {left: 70%; animation-delay: 3s;}
-.venue-stars span:nth-child(6) {left: 85%; animation-delay: 5s;}
-.venue-stars span:nth-child(7) {left: 18%; animation-delay: 4.5s;}
-.venue-stars span:nth-child(8) {left: 62%; animation-delay: 6s;}
-.venue-stars span:nth-child(9) {left: 92%; animation-delay: 2.5s;}
-.venue-stars span:nth-child(10) {left: 48%; animation-delay: 5.5s;}
+.venue-stars i:nth-child(1) {--x:5%;--s:3px;--d:7s;--delay:0s}
+.venue-stars i:nth-child(2) {--x:14%;--s:2px;--d:9s;--delay:2s}
+.venue-stars i:nth-child(3) {--x:23%;--s:4px;--d:8s;--delay:4s}
+.venue-stars i:nth-child(4) {--x:32%;--s:2px;--d:10s;--delay:1s}
+.venue-stars i:nth-child(5) {--x:41%;--s:3px;--d:7s;--delay:3s}
+.venue-stars i:nth-child(6) {--x:50%;--s:2px;--d:9s;--delay:5s}
+.venue-stars i:nth-child(7) {--x:59%;--s:4px;--d:8s;--delay:1s}
+.venue-stars i:nth-child(8) {--x:68%;--s:2px;--d:10s;--delay:4s}
+.venue-stars i:nth-child(9) {--x:77%;--s:3px;--d:7s;--delay:2s}
+.venue-stars i:nth-child(10) {--x:86%;--s:2px;--d:9s;--delay:6s}
+.venue-stars i:nth-child(11) {--x:95%;--s:3px;--d:8s;--delay:3s}
+.venue-stars i:nth-child(12) {--x:18%;--s:2px;--d:11s;--delay:6s}
+.venue-stars i:nth-child(13) {--x:45%;--s:3px;--d:9s;--delay:7s}
+.venue-stars i:nth-child(14) {--x:73%;--s:2px;--d:10s;--delay:5s}
+.venue-stars i:nth-child(15) {--x:90%;--s:4px;--d:8s;--delay:7s}
 
-@keyframes fallingStars {
+@keyframes goldenSnow {
   0% {
-    transform: translateY(-20px) rotate(0deg);
+    transform: translateY(0) translateX(0);
     opacity: 0;
   }
-  15% {opacity: .35;}
-  50% {opacity: .65;}
-  85% {opacity: .3;}
+  15% {opacity: .45;}
+  50% {
+    transform: translateY(240px) translateX(12px);
+    opacity: .3;
+  }
+  85% {opacity: .4;}
   100% {
-    transform: translateY(520px) rotate(180deg);
+    transform: translateY(520px) translateX(-10px);
     opacity: 0;
   }
+}
+
+/* Keep venue text above particles */
+.venue-image > :not(.venue-stars) {
+  position: relative;
+  z-index: 2;
 }
