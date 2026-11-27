@@ -604,3 +604,9 @@ button{cursor:pointer}
   background-size: 115% auto !important;
   background-repeat: no-repeat !important;
 }
+.venue-actions {
+  background: #f4ede5 url("marble-ivory.png") center center / cover no-repeat !important;
+  position: relative;
+  background-size: 115% auto !important;
+  transition: background-position 0.3s ease;
+}
