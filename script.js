@@ -327,4 +327,39 @@ document.addEventListener("DOMContentLoaded", () => {
       window.prompt("Copy your invitation link:", location.href);
     }
   });
+  // Smooth marble background movement while scrolling.
+  const marbleSections = document.querySelectorAll(
+    ".date-section, .countdown-section"
+  );
+
+  let marbleFrame = null;
+
+  function updateMarbleBackground() {
+    marbleSections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+
+      const shift = (window.innerHeight * 0.5 - rect.top) * 0.12;
+
+      section.style.setProperty(
+        "--marble-shift",
+        `${shift}px`
+      );
+    });
+
+    marbleFrame = null;
+  }
+
+  function requestMarbleUpdate() {
+    if (marbleFrame !== null) return;
+
+    marbleFrame = requestAnimationFrame(updateMarbleBackground);
+  }
+
+  window.addEventListener("scroll", requestMarbleUpdate, {
+    passive: true
+  });
+
+  window.addEventListener("resize", requestMarbleUpdate);
+
+  updateMarbleBackground();
 });
