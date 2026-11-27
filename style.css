@@ -747,3 +747,28 @@ button{cursor:pointer}
 .marble-continuation .countdown-section {
   background: transparent !important;
 }
+/* REMOVE BOTH VENUE FRAMES */
+.venue-image {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.venue-image::before {
+  display: none !important;
+}
+
+/* CENTER GET DIRECTIONS */
+.venue-actions {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.venue-actions .primary-button {
+  width: auto !important;
+  min-width: 0 !important;
+  padding: 15px 30px !important;
+  margin: 0 auto !important;
+  font-size: 10px !important;
+}
