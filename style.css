@@ -734,3 +734,16 @@ button{cursor:pointer}
 .marble-continuation {
   transition: background-position 1.5s ease !important;
 }
+/* ONE CONTINUOUS MARBLE: DATE TO COUNTDOWN */
+.marble-continuation {
+  background: #f4ede5 url("marble-ivory.png") center center / 115% auto no-repeat !important;
+  background-position: center calc(50% + var(--marble-shift, 0px)) !important;
+  position: relative;
+}
+
+.marble-continuation .date-section,
+.marble-continuation .venue-section,
+.marble-continuation .venue-actions,
+.marble-continuation .countdown-section {
+  background: transparent !important;
+}
