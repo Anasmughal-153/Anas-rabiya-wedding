@@ -586,3 +586,18 @@ button{cursor:pointer}
 .countdown-section {
   background: #f4ede5 url("marble-ivory.png") center/cover no-repeat !important;
 }
+/* Smooth Marble Scroll Transition */
+.date-section,
+.countdown-section {
+  background-size: 115% 115% !important;
+  background-position: center 60% !important;
+  transition:
+    background-size 1.8s ease,
+    background-position 1.8s ease !important;
+}
+
+.date-section.reveal.visible,
+.countdown-section.reveal.visible {
+  background-size: 100% 100% !important;
+  background-position: center center !important;
+}
