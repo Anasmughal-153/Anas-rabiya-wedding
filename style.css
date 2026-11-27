@@ -752,3 +752,41 @@ button{cursor:pointer}
 .marble-continuation .countdown-section {
   background: transparent !important;
 }
+/* GET DIRECTIONS — FINAL CENTERED DESIGN */
+.venue-actions {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: 55px 20px 65px !important;
+  gap: 28px !important;
+}
+
+.venue-actions .primary-button {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 275px !important;
+  max-width: 85vw !important;
+  height: 76px !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+  border: none !important;
+  border-radius: 50px !important;
+  background: #8f123d !important;
+  color: #f5eee5 !important;
+  text-decoration: none !important;
+  font-family: "DM Sans", sans-serif !important;
+  font-size: 13px !important;
+  letter-spacing: 2px !important;
+  text-align: center !important;
+  box-shadow: 0 8px 22px #690d2725 !important;
+}
+
+.venue-actions p {
+  margin: 0 !important;
+  text-align: center !important;
+  font: italic 25px "Cormorant Garamond", serif !important;
+  color: #806b63 !important;
+}
