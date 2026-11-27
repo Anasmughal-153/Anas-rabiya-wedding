@@ -891,3 +891,48 @@ button{cursor:pointer}
   50% { transform: scale(1.8); opacity: 1; }
   100% { transform: scale(1); opacity: 1; }
 }
+
+/* REAL ROSE PETALS — LUXURY FALL */
+.footer-flower-layer .rose-petal {
+  position: absolute;
+  top: -35px;
+  display: block;
+  width: var(--size);
+  height: calc(var(--size) * 1.45);
+  border-radius: 85% 15% 75% 25%;
+  background: linear-gradient(
+    135deg,
+    #f4d9cf 0%,
+    #d99a91 35%,
+    #a94b5c 75%,
+    #702039 100%
+  );
+  box-shadow:
+    inset 2px 2px 4px #fff6,
+    2px 4px 8px #0003;
+  opacity: 0;
+  transform-origin: center;
+  animation: rosePetalFall var(--duration) var(--delay) linear infinite;
+}
+
+.footer-section.is-visible .rose-petal {
+  opacity: .9;
+}
+
+@keyframes rosePetalFall {
+  0% {
+    transform: translate3d(0, -30px, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(var(--sway), 160px, 0) rotate(100deg);
+  }
+  50% {
+    transform: translate3d(calc(var(--sway) * -0.6), 330px, 0) rotate(220deg);
+  }
+  75% {
+    transform: translate3d(var(--sway), 490px, 0) rotate(300deg);
+  }
+  100% {
+    transform: translate3d(0, 700px, 0) rotate(420deg);
+  }
+}
