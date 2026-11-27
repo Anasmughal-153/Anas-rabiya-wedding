@@ -610,3 +610,8 @@ button{cursor:pointer}
   background-size: 115% auto !important;
   transition: background-position 0.3s ease;
 }
+.venue-actions {
+  background-position: center calc(50% + var(--marble-shift, 0px)) !important;
+  background-size: 115% auto !important;
+  background-repeat: no-repeat !important;
+}
