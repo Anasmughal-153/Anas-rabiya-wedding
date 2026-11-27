@@ -709,3 +709,28 @@ button{cursor:pointer}
   background: #c6a36a;
   color: #310713;
 }
+/* RESTORE ORIGINAL GET DIRECTIONS BUTTON */
+.venue-actions .primary-button {
+  display: inline-block !important;
+  background: #8b1236 !important;
+  color: #f5eee5 !important;
+  text-decoration: none !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 24px 50px !important;
+  font-family: "DM Sans", sans-serif !important;
+  font-size: 12px !important;
+  letter-spacing: 2px !important;
+  box-shadow: none !important;
+}
+
+/* MARBLE BEHIND VENUE CARD */
+.venue-section {
+  background: #f4ede5 url("marble-ivory.png") center center / cover no-repeat !important;
+  transition: background-position 1.5s ease !important;
+}
+
+/* MARBLE CONTINUITY AND TRANSITION */
+.marble-continuation {
+  transition: background-position 1.5s ease !important;
+}
