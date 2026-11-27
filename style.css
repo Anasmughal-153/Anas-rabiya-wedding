@@ -791,42 +791,59 @@ button{cursor:pointer}
   color: #806b63 !important;
 }
 
-/* CONTINUOUS GOLDEN SNOWFALL */
-.venue-image {
-  position: relative !important;
-  overflow: hidden !important;
-}
-
-.venue-image:after {
-  content: none !important;
-}
-
+/* FALLING GOLDEN STARS */
 .venue-image .venue-stars {
   position: absolute !important;
   inset: 0 !important;
-  z-index: 1 !important;
+  overflow: hidden !important;
   pointer-events: none !important;
-  opacity: .55 !important;
-
-  background-image:
-    radial-gradient(circle, #ead6ad 1.5px, transparent 2px),
-    radial-gradient(circle, #ead6ad 1px, transparent 1.8px),
-    radial-gradient(circle, #ead6ad 2px, transparent 2.5px),
-    radial-gradient(circle, #ead6ad 1px, transparent 1.8px);
-
-  background-size: 95px 110px, 130px 150px, 180px 190px, 75px 125px;
-  background-position: 0 0, 40px 20px, 80px 60px, 20px 90px;
-
-  animation: venueSnowfall 8s linear infinite !important;
+  z-index: 1 !important;
+  background: none !important;
 }
 
-@keyframes venueSnowfall {
-  from {
-    background-position: 0 0, 40px 20px, 80px 60px, 20px 90px;
-  }
-  to {
-    background-position: 30px 480px, 90px 520px, 20px 450px, 70px 500px;
-  }
+.venue-stars::before,
+.venue-stars::after {
+  content: "✦";
+  position: absolute;
+  top: -25px;
+  left: 0;
+  color: #ead6ad;
+  font-size: 13px;
+  opacity: .5;
+  text-shadow:
+    55px 80px #ead6ad,
+    120px 160px #ead6ad,
+    190px 50px #ead6ad,
+    260px 220px #ead6ad,
+    320px 100px #ead6ad,
+    380px 280px #ead6ad,
+    90px 340px #ead6ad,
+    230px 400px #ead6ad,
+    350px 450px #ead6ad;
+  animation: starFallOne 9s linear infinite;
+}
+
+.venue-stars::after {
+  content: "✧";
+  font-size: 17px;
+  opacity: .3;
+  text-shadow:
+    30px 120px #ead6ad,
+    150px 260px #ead6ad,
+    280px 40px #ead6ad,
+    340px 350px #ead6ad,
+    70px 420px #ead6ad;
+  animation: starFallTwo 12s linear infinite;
+}
+
+@keyframes starFallOne {
+  from {transform: translateY(-20px);}
+  to {transform: translateY(550px);}
+}
+
+@keyframes starFallTwo {
+  from {transform: translateY(-100px);}
+  to {transform: translateY(550px);}
 }
 
 .venue-image > :not(.venue-stars) {
