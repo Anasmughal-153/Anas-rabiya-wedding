@@ -790,3 +790,53 @@ button{cursor:pointer}
   font: italic 25px "Cormorant Garamond", serif !important;
   color: #806b63 !important;
 }
+/* GOLDEN FALLING STARS */
+.venue-image {
+  overflow: hidden;
+}
+
+.venue-image:after {
+  content: none !important;
+}
+
+.venue-stars {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.venue-stars span {
+  position: absolute;
+  top: -30px;
+  color: #ead6ad;
+  opacity: 0;
+  font-size: 17px;
+  animation: fallingStars 7s linear infinite;
+}
+
+.venue-stars span:nth-child(1) {left: 10%; animation-delay: 0s;}
+.venue-stars span:nth-child(2) {left: 25%; animation-delay: 2s;}
+.venue-stars span:nth-child(3) {left: 40%; animation-delay: 4s;}
+.venue-stars span:nth-child(4) {left: 55%; animation-delay: 1s;}
+.venue-stars span:nth-child(5) {left: 70%; animation-delay: 3s;}
+.venue-stars span:nth-child(6) {left: 85%; animation-delay: 5s;}
+.venue-stars span:nth-child(7) {left: 18%; animation-delay: 4.5s;}
+.venue-stars span:nth-child(8) {left: 62%; animation-delay: 6s;}
+.venue-stars span:nth-child(9) {left: 92%; animation-delay: 2.5s;}
+.venue-stars span:nth-child(10) {left: 48%; animation-delay: 5.5s;}
+
+@keyframes fallingStars {
+  0% {
+    transform: translateY(-20px) rotate(0deg);
+    opacity: 0;
+  }
+  15% {opacity: .35;}
+  50% {opacity: .65;}
+  85% {opacity: .3;}
+  100% {
+    transform: translateY(520px) rotate(180deg);
+    opacity: 0;
+  }
+}
