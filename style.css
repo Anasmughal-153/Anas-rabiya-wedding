@@ -597,8 +597,10 @@ button{cursor:pointer}
   background-repeat: no-repeat !important;
   transition: background-position 1.5s ease !important;
 }
-
-.date-section.visible,
-.countdown-section.visible {
-  background-position: center 70% !important;
+.date-section,
+.countdown-section {
+  background-position:
+    center calc(50% + var(--marble-shift, 0px)) !important;
+  background-size: 115% auto !important;
+  background-repeat: no-repeat !important;
 }
