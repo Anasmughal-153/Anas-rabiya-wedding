@@ -692,3 +692,20 @@ button{cursor:pointer}
 .marble-continuation .countdown-section {
   background: transparent !important;
 }
+.venue-actions .primary-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #690d27, #310713);
+  color: #ead6ad;
+  border: 1px solid #c6a36a;
+  padding: 14px 30px;
+  text-decoration: none;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  transition: all .3s ease;
+}
+
+.venue-actions .primary-button:hover {
+  background: #c6a36a;
+  color: #310713;
+}
