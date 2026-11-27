@@ -363,25 +363,26 @@ document.addEventListener("DOMContentLoaded", () => {
   updateMarbleBackground();
 });
 
-/* FOOTER FLOWER ANIMATION */
+/* REALISTIC ROSE PETAL FALL */
 document.addEventListener("DOMContentLoaded", () => {
   const footer = document.querySelector(".footer-section");
   const layer = document.querySelector(".footer-flower-layer");
 
   if (!footer || !layer) return;
 
-  const flowers = ["✿", "❀", "✾", "✽", "❁"];
+  layer.innerHTML = "";
 
-  for (let i = 0; i < 22; i++) {
-    const flower = document.createElement("span");
+  for (let i = 0; i < 28; i++) {
+    const petal = document.createElement("span");
+    petal.className = "rose-petal";
 
-    flower.textContent = flowers[i % flowers.length];
-    flower.style.left = (i * 37 % 100) + "%";
-    flower.style.fontSize = (13 + i % 12) + "px";
-    flower.style.animationDuration = (7 + i % 7) + "s";
-    flower.style.animationDelay = (i * 0.45) + "s";
+    petal.style.left = (Math.random() * 100) + "%";
+    petal.style.setProperty("--size", (12 + Math.random() * 13) + "px");
+    petal.style.setProperty("--duration", (7 + Math.random() * 7) + "s");
+    petal.style.setProperty("--delay", (Math.random() * 10) + "s");
+    petal.style.setProperty("--sway", (35 + Math.random() * 55) + "px");
 
-    layer.appendChild(flower);
+    layer.appendChild(petal);
   }
 
   const observer = new IntersectionObserver(entries => {
@@ -390,7 +391,7 @@ document.addEventListener("DOMContentLoaded", () => {
         footer.classList.add("is-visible");
       }
     });
-  }, { threshold: 0.25 });
+  }, { threshold: 0.2 });
 
   observer.observe(footer);
 });
