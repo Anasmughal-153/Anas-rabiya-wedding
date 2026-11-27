@@ -362,3 +362,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateMarbleBackground();
 });
+
+/* FOOTER FLOWER ANIMATION */
+document.addEventListener("DOMContentLoaded", () => {
+  const footer = document.querySelector(".footer-section");
+  const layer = document.querySelector(".footer-flower-layer");
+
+  if (!footer || !layer) return;
+
+  const flowers = ["✿", "❀", "✾", "✽", "❁"];
+
+  for (let i = 0; i < 22; i++) {
+    const flower = document.createElement("span");
+
+    flower.textContent = flowers[i % flowers.length];
+    flower.style.left = (i * 37 % 100) + "%";
+    flower.style.fontSize = (13 + i % 12) + "px";
+    flower.style.animationDuration = (7 + i % 7) + "s";
+    flower.style.animationDelay = (i * 0.45) + "s";
+
+    layer.appendChild(flower);
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        footer.classList.add("is-visible");
+      }
+    });
+  }, { threshold: 0.25 });
+
+  observer.observe(footer);
+});
