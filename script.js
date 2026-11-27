@@ -329,9 +329,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   // Smooth marble background movement while scrolling.
   const marbleSections = document.querySelectorAll(
-  ".date-section, .countdown-section, .venue-actions"
+  ".date-section, .marble-continuation"
 );
- 
   let marbleFrame = null;
 
   function updateMarbleBackground() {
