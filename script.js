@@ -338,7 +338,7 @@ document.addEventListener("DOMContentLoaded", () => {
     marbleSections.forEach((section) => {
       const rect = section.getBoundingClientRect();
 
-      const shift = (window.innerHeight * 0.5 - rect.top) * 0.12;
+      const shift = (window.innerHeight * 0.5 - rect.top) * 0.20;
 
       section.style.setProperty(
         "--marble-shift",
