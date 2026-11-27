@@ -791,21 +791,59 @@ button{cursor:pointer}
   color: #806b63 !important;
 }
 
-/* REAL GOLDEN STAR FALL */
+/* FALLING GOLDEN STARS */
 .venue-image .venue-stars {
   position: absolute !important;
   inset: 0 !important;
-  z-index: 1 !important;
-  pointer-events: none !important;
   overflow: hidden !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='180' viewBox='0 0 150 180'%3E%3Cpath d='M25 5 L29 20 L44 25 L29 30 L25 45 L21 30 L6 25 L21 20Z' fill='%23ead6ad' opacity='.65'/%3E%3Cpath d='M105 65 L108 76 L119 80 L108 84 L105 95 L102 84 L91 80 L102 76Z' fill='%23ead6ad' opacity='.45'/%3E%3Cpath d='M55 120 L59 133 L72 137 L59 141 L55 154 L51 141 L38 137 L51 133Z' fill='%23ead6ad' opacity='.55'/%3E%3C/svg%3E");
-  background-size: 150px 180px;
-  animation: realStarFall 7s linear infinite;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  background: none !important;
 }
 
-@keyframes realStarFall {
-  from { background-position: 0 -180px; }
-  to { background-position: 35px 540px; }
+.venue-stars::before,
+.venue-stars::after {
+  content: "✦";
+  position: absolute;
+  top: -25px;
+  left: 0;
+  color: #ead6ad;
+  font-size: 13px;
+  opacity: .5;
+  text-shadow:
+    55px 80px #ead6ad,
+    120px 160px #ead6ad,
+    190px 50px #ead6ad,
+    260px 220px #ead6ad,
+    320px 100px #ead6ad,
+    380px 280px #ead6ad,
+    90px 340px #ead6ad,
+    230px 400px #ead6ad,
+    350px 450px #ead6ad;
+  animation: starFallOne 9s linear infinite;
+}
+
+.venue-stars::after {
+  content: "✧";
+  font-size: 17px;
+  opacity: .3;
+  text-shadow:
+    30px 120px #ead6ad,
+    150px 260px #ead6ad,
+    280px 40px #ead6ad,
+    340px 350px #ead6ad,
+    70px 420px #ead6ad;
+  animation: starFallTwo 12s linear infinite;
+}
+
+@keyframes starFallOne {
+  from {transform: translateY(-20px);}
+  to {transform: translateY(550px);}
+}
+
+@keyframes starFallTwo {
+  from {transform: translateY(-100px);}
+  to {transform: translateY(550px);}
 }
 
 .venue-image > :not(.venue-stars) {
