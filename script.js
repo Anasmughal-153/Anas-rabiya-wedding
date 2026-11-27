@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const startPosition = window.scrollY;
     const targetPosition = curtainHero.getBoundingClientRect().top + window.scrollY;
     const distance = targetPosition - startPosition;
-    const duration = 2400;
+    const duration = 1800;
     let startTime = null;
 
     function smoothScroll(currentTime) {
