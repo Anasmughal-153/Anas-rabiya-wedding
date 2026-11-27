@@ -581,3 +581,8 @@ button{cursor:pointer}
   font-size: 22px !important;
   line-height: 1 !important;
 }
+/* Same ivory marble background on Date and Countdown */
+.date-section,
+.countdown-section {
+  background: #f4ede5 url("marble-ivory.png") center/cover no-repeat !important;
+}
