@@ -767,21 +767,21 @@ button{cursor:pointer}
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 275px !important;
-  max-width: 85vw !important;
-  height: 76px !important;
+  width: 210px !important;
+  max-width: 80vw !important;
+  height: 54px !important;
   margin: 0 auto !important;
-  padding: 0 20px !important;
+  padding: 0 16px !important;
   border: none !important;
   border-radius: 50px !important;
   background: #8f123d !important;
   color: #f5eee5 !important;
   text-decoration: none !important;
   font-family: "DM Sans", sans-serif !important;
-  font-size: 13px !important;
-  letter-spacing: 2px !important;
+  font-size: 11px !important;
+  letter-spacing: 1.6px !important;
   text-align: center !important;
-  box-shadow: 0 8px 22px #690d2725 !important;
+  box-shadow: 0 6px 18px #690d2725 !important;
 }
 
 .venue-actions p {
