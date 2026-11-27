@@ -735,10 +735,15 @@ button{cursor:pointer}
   transition: background-position 1.5s ease !important;
 }
 /* ONE CONTINUOUS MARBLE: DATE TO COUNTDOWN */
+/* FULL CONTINUOUS MARBLE: DATE TO COUNTDOWN */
 .marble-continuation {
-  background: #f4ede5 url("marble-ivory.png") center center / 115% auto no-repeat !important;
+  background-color: #f4ede5 !important;
+  background-image: url("marble-ivory.png") !important;
+  background-size: 115% auto !important;
   background-position: center calc(50% + var(--marble-shift, 0px)) !important;
+  background-repeat: repeat-y !important;
   position: relative;
+  transition: background-position 0.3s ease;
 }
 
 .marble-continuation .date-section,
@@ -746,29 +751,4 @@ button{cursor:pointer}
 .marble-continuation .venue-actions,
 .marble-continuation .countdown-section {
   background: transparent !important;
-}
-/* REMOVE BOTH VENUE FRAMES */
-.venue-image {
-  border: none !important;
-  box-shadow: none !important;
-}
-
-.venue-image::before {
-  display: none !important;
-}
-
-/* CENTER GET DIRECTIONS */
-.venue-actions {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  text-align: center !important;
-}
-
-.venue-actions .primary-button {
-  width: auto !important;
-  min-width: 0 !important;
-  padding: 15px 30px !important;
-  margin: 0 auto !important;
-  font-size: 10px !important;
 }
