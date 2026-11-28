@@ -304,8 +304,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   shareButton?.addEventListener("click", async () => {
     const shareData = {
-      title: "Anas & Rabiya | Valima Invitation",
-      text: "You are invited to the Valima of Anas & Rabiya on 17 January 2027 at 8:00 PM, The Liberty Ballroom, Karachi.",
+      title: "Anas | Valima Invitation",
+      text: "You are invited to the Valima of Anas on 17 January 2027 at 8:00 PM, The Liberty Ballroom, Karachi.",
       url: location.href
     };
 
