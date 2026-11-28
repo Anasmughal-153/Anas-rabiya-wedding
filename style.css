@@ -969,13 +969,7 @@ button{cursor:pointer}
   z-index: 2 !important;
 }
 
-/* NATURAL ROSE PETALS — FINAL */
-.footer-section {
-  position: relative !important;
-  overflow: hidden !important;
-  isolation: isolate !important;
-}
-
+/* SIMPLE NATURAL RED PETAL FALL */
 .footer-section .footer-flower-layer {
   position: absolute !important;
   inset: 0 !important;
@@ -986,57 +980,37 @@ button{cursor:pointer}
 
 .footer-section .rose-petal {
   position: absolute !important;
-  left: 50% !important;
-  top: 5% !important;
-
+  top: -35px !important;
   width: var(--size) !important;
-  height: calc(var(--size) * 1.65) !important;
+  height: calc(var(--size) * 1.6) !important;
 
   border-radius: 85% 15% 75% 25% !important;
 
   background: linear-gradient(
     145deg,
-    #f9e0d9 0%,
-    #e9aaa3 35%,
-    #d27683 70%,
-    #a84961 100%
+    #e99a9b,
+    #bd344e 55%,
+    #760d2b
   ) !important;
 
-  box-shadow: inset 2px 2px 3px #fff7,
-              1px 3px 5px #0003 !important;
+  box-shadow: inset 2px 2px 3px #ffffff55 !important;
 
-  opacity: 0 !important;
-  animation: naturalRoseFall var(--duration) var(--delay) linear infinite !important;
+  opacity: .9 !important;
+
+  animation: simplePetalFall var(--duration) var(--delay) linear infinite !important;
 }
 
-.footer-section.is-visible .rose-petal {
-  opacity: 1 !important;
-}
-
-@keyframes naturalRoseFall {
+@keyframes simplePetalFall {
   0% {
-    opacity: 0;
-    transform: translate(0, 0) rotate(0deg) scale(.3);
+    transform: translate3d(0, -30px, 0) rotate(0deg);
   }
-  10% {
-    opacity: .95;
-    transform: translate(var(--burst-x), var(--burst-y))
-      rotate(100deg) scale(1);
+
+  50% {
+    transform: translate3d(var(--sway), 350px, 0) rotate(180deg);
   }
-  35% {
-    opacity: .9;
-    transform: translate(calc(var(--burst-x) + var(--drift)), 220px)
-      rotate(300deg);
-  }
-  65% {
-    opacity: .85;
-    transform: translate(calc(var(--burst-x) - var(--drift)), 450px)
-      rotate(550deg);
-  }
+
   100% {
-    opacity: .15;
-    transform: translate(var(--drift), 750px)
-      rotate(var(--spin));
+    transform: translate3d(calc(var(--sway) * -1), 750px, 0) rotate(360deg);
   }
 }
 
