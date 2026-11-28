@@ -969,43 +969,78 @@ button{cursor:pointer}
   z-index: 2 !important;
 }
 
-/* NATURAL ROSE PETAL BURST */
-function startRosePetals() {
-  const footer = document.querySelector(".footer-section");
-  const layer = document.querySelector(".footer-flower-layer");
-
-  if (!footer || !layer || layer.dataset.ready) return;
-  layer.dataset.ready = "yes";
-  layer.innerHTML = "";
-
-  for (let i = 0; i < 24; i++) {
-    const petal = document.createElement("span");
-    petal.className = "rose-petal";
-
-    petal.style.setProperty("--size", (9 + Math.random() * 6) + "px");
-    petal.style.setProperty("--burst-x", (Math.random() * 360 - 180) + "px");
-    petal.style.setProperty("--burst-y", (Math.random() * 100 - 50) + "px");
-    petal.style.setProperty("--drift", (Math.random() * 160 - 80) + "px");
-    petal.style.setProperty("--spin", (Math.random() * 900 + 400) + "deg");
-    petal.style.setProperty("--delay", (Math.random() * 2.5) + "s");
-    petal.style.setProperty("--duration", (8 + Math.random() * 4) + "s");
-
-    layer.appendChild(petal);
-  }
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        footer.classList.add("is-visible");
-      }
-    });
-  }, { threshold: 0.2 });
-
-  observer.observe(footer);
+/* NATURAL ROSE PETALS — FINAL */
+.footer-section {
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
 }
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", startRosePetals);
-} else {
-  startRosePetals();
+.footer-section .footer-flower-layer {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+.footer-section .rose-petal {
+  position: absolute !important;
+  left: 50% !important;
+  top: 5% !important;
+
+  width: var(--size) !important;
+  height: calc(var(--size) * 1.65) !important;
+
+  border-radius: 85% 15% 75% 25% !important;
+
+  background: linear-gradient(
+    145deg,
+    #f9e0d9 0%,
+    #e9aaa3 35%,
+    #d27683 70%,
+    #a84961 100%
+  ) !important;
+
+  box-shadow: inset 2px 2px 3px #fff7,
+              1px 3px 5px #0003 !important;
+
+  opacity: 0 !important;
+  animation: naturalRoseFall var(--duration) var(--delay) linear infinite !important;
+}
+
+.footer-section.is-visible .rose-petal {
+  opacity: 1 !important;
+}
+
+@keyframes naturalRoseFall {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(0deg) scale(.3);
   }
+  10% {
+    opacity: .95;
+    transform: translate(var(--burst-x), var(--burst-y))
+      rotate(100deg) scale(1);
+  }
+  35% {
+    opacity: .9;
+    transform: translate(calc(var(--burst-x) + var(--drift)), 220px)
+      rotate(300deg);
+  }
+  65% {
+    opacity: .85;
+    transform: translate(calc(var(--burst-x) - var(--drift)), 450px)
+      rotate(550deg);
+  }
+  100% {
+    opacity: .15;
+    transform: translate(var(--drift), 750px)
+      rotate(var(--spin));
+  }
+}
+
+.footer-section > :not(.footer-flower-layer) {
+  position: relative !important;
+  z-index: 2 !important;
+}
