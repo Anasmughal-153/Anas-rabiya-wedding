@@ -362,39 +362,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateMarbleBackground();
 });
-/* NATURAL ROSE PETAL BURST */
+
+/* SIMPLE FALLING RED ROSE PETALS */
 function startRosePetals() {
   const footer = document.querySelector(".footer-section");
   const layer = document.querySelector(".footer-flower-layer");
 
-  if (!footer || !layer || layer.dataset.ready) return;
-  layer.dataset.ready = "yes";
+  if (!footer || !layer) return;
+
   layer.innerHTML = "";
 
-  for (let i = 0; i < 24; i++) {
+  for (let i = 0; i < 22; i++) {
     const petal = document.createElement("span");
     petal.className = "rose-petal";
 
-    petal.style.setProperty("--size", (9 + Math.random() * 6) + "px");
-    petal.style.setProperty("--burst-x", (Math.random() * 360 - 180) + "px");
-    petal.style.setProperty("--burst-y", (Math.random() * 100 - 50) + "px");
-    petal.style.setProperty("--drift", (Math.random() * 160 - 80) + "px");
-    petal.style.setProperty("--spin", (Math.random() * 900 + 400) + "deg");
-    petal.style.setProperty("--delay", (Math.random() * 2.5) + "s");
-    petal.style.setProperty("--duration", (8 + Math.random() * 4) + "s");
+    petal.style.left = Math.random() * 100 + "%";
+    petal.style.setProperty("--size", (10 + Math.random() * 9) + "px");
+    petal.style.setProperty("--duration", (8 + Math.random() * 6) + "s");
+    petal.style.setProperty("--delay", (-Math.random() * 14) + "s");
+    petal.style.setProperty("--sway", (20 + Math.random() * 35) + "px");
 
     layer.appendChild(petal);
   }
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        footer.classList.add("is-visible");
-      }
-    });
-  }, { threshold: 0.2 });
-
-  observer.observe(footer);
+  footer.classList.add("is-visible");
 }
 
 if (document.readyState === "loading") {
