@@ -362,34 +362,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateMarbleBackground();
 });
-
-/* SIMPLE FALLING RED ROSE PETALS */
-function startRosePetals() {
-  const footer = document.querySelector(".footer-section");
-  const layer = document.querySelector(".footer-flower-layer");
-
-  if (!footer || !layer) return;
-
-  layer.innerHTML = "";
-
-  for (let i = 0; i < 22; i++) {
-    const petal = document.createElement("span");
-    petal.className = "rose-petal";
-
-    petal.style.left = Math.random() * 100 + "%";
-    petal.style.setProperty("--size", (10 + Math.random() * 9) + "px");
-    petal.style.setProperty("--duration", (8 + Math.random() * 6) + "s");
-    petal.style.setProperty("--delay", (-Math.random() * 14) + "s");
-    petal.style.setProperty("--sway", (20 + Math.random() * 35) + "px");
-
-    layer.appendChild(petal);
-  }
-
-  footer.classList.add("is-visible");
-}
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", startRosePetals);
-} else {
-  startRosePetals();
-}
